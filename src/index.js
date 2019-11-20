@@ -1,12 +1,39 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Component } from 'react';
+import { render } from 'react-dom';
+import SpillLayout from './Spills/Spill-Layout';
+import GridSelector from './Spills/Grid-Selector';
+import './Styles/base.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class App extends Component {
+  constructor() {
+    super();
+    this.state = 
+    ({
+      cols: ['one', 'two', 'three', 'four', 'five'],
+      activeCol: 'three'
+    });
+    this.gridHandler = this.gridHandler.bind(this);
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  gridHandler = (grid) => {
+    this.setState({activeCol: this.state.cols[grid -1]});
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Spill Layout</h2>
+        <hr />
+        <GridSelector
+          onGridClick={this.gridHandler} 
+        />
+        <SpillLayout 
+          cols={this.state.activeCol}
+        />
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
