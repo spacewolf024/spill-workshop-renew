@@ -14,6 +14,7 @@ class App extends Component {
       activeCol: 'three'
     });
     this.gridHandler = this.gridHandler.bind(this);
+    console.log('hello')
   }
 
   gridHandler = (grid) => {

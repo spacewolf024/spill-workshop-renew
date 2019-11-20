@@ -1,7 +1,11 @@
+import React from 'react';
 import React, { Component } from "react";
 import ProductCard from './Product-Card';
+import ThemeCard from './Theme-Card';
 import Filters from './Filters';
 import SortFilter from './Sort-Filter';
+import ProductData from './Product-Data';
+
 import '../Styles/spill.scss';
 
 class Spill extends Component {
@@ -17,21 +21,26 @@ class Spill extends Component {
     this.setState({showFilter: show});
   }
 
-  createProducts() {
-    var productArray = [];
-    for(let i = 1; i <= 25; i++) {
-      let product = { 
-        name: 'Product ' + i,
-        price: '$Price '
-      }
-      productArray.push(product);
-    }
-    return productArray;
-  }
-
   render() {
-    var items = this.createProducts();
+    var items = ProductData();
     var filtersActive = this.state.showFilter ? ' active-filters' : '';
+
+    var cards = items.map((item, index) => {
+      if(item.type === 'theme')
+      {
+       return <ThemeCard 
+                key={index}
+                item={item}
+                index={index}
+              />
+      }
+      else {
+        return  <ProductCard 
+                key={index}
+                item={item}
+                index={index}
+              />
+      }};
 
     return (
       <div className='spill-container'>
@@ -48,15 +57,7 @@ class Spill extends Component {
         />
 
         <ul className={'miniset-list ' + this.props.cols + filtersActive}>
-          {
-            items.map((item, index) => (
-              <ProductCard 
-                key={index}
-                item={item}
-                index={index}
-              />
-            ))
-          }
+          {cards}
         </ul>
       </div>
     )
