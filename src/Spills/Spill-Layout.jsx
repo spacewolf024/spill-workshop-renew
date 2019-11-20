@@ -1,5 +1,5 @@
 import React from 'react';
-import React, { Component } from "react";
+import  { Component } from "react";
 import ProductCard from './Product-Card';
 import ThemeCard from './Theme-Card';
 import Filters from './Filters';
@@ -13,7 +13,6 @@ class Spill extends Component {
   constructor() {  
     super();
     this.state = ({showFilter: false});
-    this.createProducts = this.createProducts.bind(this);
     this.filterClick = this.filterClick.bind(this);
   }
 
@@ -40,7 +39,7 @@ class Spill extends Component {
                 item={item}
                 index={index}
               />
-      }};
+      }})
 
     return (
       <div className='spill-container'>
