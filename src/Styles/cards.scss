@@ -1,6 +1,12 @@
 .blank-image {
-  background: #CCC;
+  background: #ccc;
   height: 350px;
+}
+
+.theme-card {
+  .blank-image {
+    background: #888;
+  }
 }
 
 .blank-card {
