@@ -34,6 +34,13 @@ class Spill extends Component {
 
   render() {
     var itemsData = Data.GetProducts();
+    var minisetData = [];
+    for(var i = 0; i < itemsData.length; i++) {
+      var obj = {...Data.dataObj(), ...itemsData[i]};
+      itemsData[i] = obj;
+    }
+    console.log(itemsData);
+    
     var themesData = Data.GetThemes();
     var cardsData = this.injectThemes(itemsData, themesData);
     var filtersActive = this.state.showFilter ? " active-filters" : "";
@@ -49,9 +56,18 @@ class Spill extends Component {
     return (
       <main>
         <div className="spill-container">
-          <Filters itemCount={itemsData.length} filterActive={this.state.showFilter} showFilter={this.filterClick} />
 
-          <SortFilter show={this.state.showFilter} hideFilter={this.filterClick} />
+          <Filters 
+            itemCount={itemsData.length} 
+            filterActive={this.state.showFilter} 
+            showFilter={this.filterClick} 
+            onGridClick={this.props.onGridClick}
+          />
+
+          <SortFilter 
+            show={this.state.showFilter} 
+            hideFilter={this.filterClick}
+          />
 
           <ul className={"miniset-list" + this.props.cols + filtersActive}>{cards}</ul>
         </div>

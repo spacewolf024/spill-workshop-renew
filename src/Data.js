@@ -41,4 +41,47 @@ export default class Data {
   static GetBreadcrumbs() {
     return ["Home", "Super", "Category", "Spill"];
   }
+
+  static dataObj() {
+    return {
+      name: '',
+      familyId: '',
+      skuId: '',
+      type: '',
+      templateType: '',
+      url: '',
+      formattedPrice: '',
+      shippingMsg: '',
+      lineLevelMessage: {
+        primary: '',
+        shipping: '',
+        marketing: ''
+      },
+      colorBar: [
+        {
+          imagepath: '',
+          altText: '',
+          showColorbar: '',
+          showPlus: '',
+          sku: '',
+          grouper: '',
+          sor: ''
+        }
+      ],
+      isFavorited: '',
+      canFavorite: '',
+      brand: '',
+      images: [
+        {
+          base: '',
+          hover: '',
+          isHoverable: ''
+        }
+      ],
+      reviewRating: '',
+      optionChoice: '',
+      baseLoggingUrl: ''
+
+    }
+  }
 }

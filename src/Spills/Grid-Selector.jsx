@@ -1,55 +1,32 @@
 import React from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
+import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import Switch from '@material-ui/core/Switch';
 
-export default function GridSelector(props) {
-  const [value, setValue] = React.useState('3');
+export default function SwitchLabels(props) {
+  const [state, setState] = React.useState({
+    checkedA: true,
+    checkedB: true,
+  });
 
-  const handleChange = event => {
-    setValue(event.target.value);
-    props.onGridClick(event.target.value);
+  const handleChange = name => event => {
+    setState({ ...state, [name]: event.target.checked });
+    props.onGridClick();
   };
 
   return (
-    <div className="grid-select-container">
-      <FormControl component="fieldset">
-        <FormLabel component="legend">Number of Columns</FormLabel>
-        <RadioGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
-          <FormControlLabel
-            value="1"
-            control={<Radio color="primary" />}
-            label="1"
-            labelPlacement="bottom"
+    <FormGroup row>
+      <FormControlLabel
+        label="Cols"
+        control={
+          <Switch
+            checked={state.checkedB}
+            onChange={handleChange('checkedB')}
+            value="checkedB"
+            color="primary"
           />
-          <FormControlLabel
-            value="2"
-            control={<Radio color="primary" />}
-            label="2"
-            labelPlacement="bottom"
-          />
-          <FormControlLabel
-            value="3"
-            control={<Radio color="primary" />}
-            label="3"
-            labelPlacement="bottom"
-          />
-          <FormControlLabel
-            value="4"
-            control={<Radio color="primary" />}
-            label="4"
-            labelPlacement="bottom"
-          />
-          <FormControlLabel
-            value="5"
-            control={<Radio color="primary" />}
-            label="5"
-            labelPlacement="bottom"
-          />
-        </RadioGroup>
-      </FormControl>
-    </div>
+        }
+      />
+    </FormGroup>
   );
 }

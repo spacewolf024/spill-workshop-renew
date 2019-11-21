@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GridSelector from './Grid-Selector';
 import '../Styles/filters.scss';
 
 class Filters extends Component {
@@ -10,8 +11,14 @@ class Filters extends Component {
   }
 
   sortClickhandler = () => {
-    this.props.showFilter(!this.state.filterActive);
-    this.setState({showFilter: !this.state.showFilter});
+    if (this.state.showFilter) {
+      this.props.showFilter(!this.state.filterActive);
+      this.setState({showFilter: !this.state.showFilter});
+    } else {
+      this.props.showFilter(!this.state.filterActive);
+      this.setState({showFilter: !this.state.showFilter});
+    }
+    
   }
 
   render() {
@@ -24,7 +31,9 @@ class Filters extends Component {
           <li className='bops-filter'>
             <button>BOPS / Ready to Deliver Filter</button>
           </li>
-          <li className='item-count'>{this.props.itemCount} items</li>
+          <li className='item-count'>{this.props.itemCount} items
+            <GridSelector onGridClick={this.props.onGridClick} />
+          </li>
           {/* <li className='col-switch'>
             <button className={'small-cols'}>X cols</button>
             <button className={'lrg-cols'}>Y cols</button>
