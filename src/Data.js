@@ -7,7 +7,7 @@ export default class Data {
         price: "$149.99",
         type: "product",
         lineLevelMessage: {
-          primary: "test",
+          primary: "Cyber Week Sale",
           marketing: "New Arrival"
         }
       },
@@ -44,45 +44,44 @@ export default class Data {
 
   static dataObj() {
     return {
-      name: '',
-      familyId: '',
-      skuId: '',
-      type: '',
-      templateType: '',
-      url: '',
-      price: '',
-      formattedPrice: '',
-      shippingMsg: '',
+      name: "",
+      familyId: "",
+      skuId: "",
+      type: "",
+      templateType: "",
+      url: "",
+      price: "",
+      formattedPrice: "",
+      shippingMsg: "",
       lineLevelMessage: {
-        primary: '',
-        shipping: '',
-        marketing: ''
+        primary: "",
+        shipping: "",
+        marketing: ""
       },
       colorBar: [
         {
-          imagepath: '',
-          altText: '',
-          showColorbar: '',
-          showPlus: '',
-          sku: '',
-          grouper: '',
-          sor: ''
+          imagepath: "",
+          altText: "",
+          showColorbar: "",
+          showPlus: "",
+          sku: "",
+          grouper: "",
+          sor: ""
         }
       ],
-      isFavorited: '',
-      canFavorite: '',
-      brand: '',
+      isFavorited: "",
+      canFavorite: "",
+      brand: "",
       images: [
         {
-          base: '',
-          hover: '',
-          isHoverable: ''
+          base: "",
+          hover: "",
+          isHoverable: ""
         }
       ],
-      reviewRating: '',
-      optionChoice: '',
-      baseLoggingUrl: ''
-    }
+      reviewRating: "",
+      optionChoice: "",
+      baseLoggingUrl: ""
+    };
   }
 }
-
