@@ -1,9 +1,6 @@
-import React, { Component, PureComponent, Fragment } from "react";
+import React, { PureComponent } from "react";
 
 export default class Breadcrumbs extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const breadcrumbs = this.props.breadcrumbs.map((item, index) => {
       return <li>{item}</li>;

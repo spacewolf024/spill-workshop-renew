@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "../Styles/cards.scss";
 
 class ProductCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const colorbar = this.props.showColorbar && <div>Colorbar</div>;
     const favorite = this.props.showFavorite && <div>Favorite</div>;

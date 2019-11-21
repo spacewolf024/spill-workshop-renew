@@ -7,7 +7,6 @@ import "./Styles/base.scss";
 import Data from "./Data";
 import Breadcrumbs from "./Breadcrumbs";
 
-var breadcrumbsData = Data.Breadcrumbs();
 class App extends Component {
   constructor() {
     super();
@@ -24,7 +23,7 @@ class App extends Component {
   };
 
   render() {
-    var breadcrumbsData = Data.Breadcrumbs();
+    let breadcrumbsData = Data.Breadcrumbs();
 
     return (
       <div>
