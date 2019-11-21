@@ -23,7 +23,7 @@ class App extends Component {
   };
 
   render() {
-    let breadcrumbsData = Data.Breadcrumbs();
+    let breadcrumbsData = Data.GetBreadcrumbs();
 
     return (
       <div>

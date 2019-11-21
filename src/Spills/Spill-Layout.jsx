@@ -19,11 +19,26 @@ class Spill extends Component {
     this.setState({ showFilter: show });
   };
 
+  injectThemes = (products, themes) => {
+    //loop through themes and insert theme into the proper position with the products array
+    let cards = products.slice(0); //clone array
+    themes.forEach(theme => {
+      let position = theme.position - 1; //account for 0th item
+      if (products.length > position) {
+        cards.splice(position, 0, theme);
+      }
+    });
+
+    return cards;
+  };
+
   render() {
-    var itemsData = Data.Product();
+    var itemsData = Data.GetProducts();
+    var themesData = Data.GetThemes();
+    var cardsData = this.injectThemes(itemsData, themesData);
     var filtersActive = this.state.showFilter ? " active-filters" : "";
 
-    var cards = itemsData.map((item, index) => {
+    var cards = cardsData.map((item, index) => {
       if (item.type === "theme") {
         return <ThemeCard key={index} item={item} index={index} />;
       } else {
