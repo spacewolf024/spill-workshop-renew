@@ -7,7 +7,7 @@ export default class Data {
         price: "$149.99",
         type: "product",
         lineLevelMessage: {
-          primary: "test",
+          primary: "Cyber Week Sale",
           marketing: "New Arrival"
         }
       },
@@ -44,15 +44,15 @@ export default class Data {
 
   static dataObj() {
     return {
-      name: '',
-      familyId: '',
-      skuId: '',
-      type: '',
-      templateType: '',
-      url: '',
-      price: '',
-      formattedPrice: '',
-      shippingMsg: '',
+      name: "",
+      familyId: "",
+      skuId: "",
+      type: "",
+      templateType: "",
+      url: "",
+      price: "",
+      formattedPrice: "",
+      shippingMsg: "",
       lineLevelMessage: {
         primary: '',
         shipping: Data.randomShippingMsgGenerator(),
@@ -75,15 +75,15 @@ export default class Data {
       brand: '',
       images: [
         {
-          base: '',
-          hover: '',
-          isHoverable: ''
+          base: "",
+          hover: "",
+          isHoverable: ""
         }
       ],
-      reviewRating: '',
-      optionChoice: '',
-      baseLoggingUrl: ''
-    }
+      reviewRating: "",
+      optionChoice: "",
+      baseLoggingUrl: ""
+    };
   }
 
   static randomBoolGenerator() {
@@ -114,4 +114,3 @@ export default class Data {
     return (Math.floor(Math.random() * Math.floor(10)));
   }
 }
-
