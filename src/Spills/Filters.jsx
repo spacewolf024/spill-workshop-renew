@@ -6,26 +6,18 @@ class Filters extends Component {
 
   constructor(props) {  
     super(props);
-    this.state = ({showFilter: this.props.filterActive})
     this.sortClickhandler = this.sortClickhandler.bind(this);
   }
 
   sortClickhandler = () => {
-    if (this.state.showFilter) {
-      this.props.showFilter(!this.state.filterActive);
-      this.setState({showFilter: !this.state.showFilter});
-    } else {
-      this.props.showFilter(!this.state.filterActive);
-      this.setState({showFilter: !this.state.showFilter});
-    }
-    
+    this.props.showFilter(!this.props.filterActive);
   }
 
   render() {
     return (
       <div>
         <ul className='filter-container'>
-          <li className='sort-filter' >
+          <li className='sort-filter'>
             <button onClick={this.sortClickhandler}>Sort &amp; Filter</button>
           </li>
           <li className='bops-filter'>

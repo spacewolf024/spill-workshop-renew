@@ -50,6 +50,7 @@ export default class Data {
       type: '',
       templateType: '',
       url: '',
+      price: '',
       formattedPrice: '',
       shippingMsg: '',
       lineLevelMessage: {
@@ -81,7 +82,7 @@ export default class Data {
       reviewRating: '',
       optionChoice: '',
       baseLoggingUrl: ''
-
     }
   }
 }
+

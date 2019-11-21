@@ -8,11 +8,11 @@ class SortFilter extends Component {
   }
 
   hideClick() {
-    this.props.hideFilter(!this.props.show);
+    this.props.closeFilter(!this.props.showFilter);
   }
 
   render() {
-    var showHideClass = this.props.show ? 'show-filter' : 'hide-filter';
+    var showHideClass = this.props.showFilter ? 'show-filter' : 'hide-filter';
     return (
       <div className={showHideClass}>
         <button onClick={this.hideClick} className='hide-filter-btn'>Hide Filters</button>

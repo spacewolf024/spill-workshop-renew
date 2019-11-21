@@ -15,7 +15,7 @@ class Spill extends Component {
     this.filterClick = this.filterClick.bind(this);
   }
 
-  filterClick = show => {
+  filterClick = (show) => {
     this.setState({ showFilter: show });
   };
 
@@ -34,7 +34,6 @@ class Spill extends Component {
 
   render() {
     var itemsData = Data.GetProducts();
-    var minisetData = [];
     for(var i = 0; i < itemsData.length; i++) {
       var obj = {...Data.dataObj(), ...itemsData[i]};
       itemsData[i] = obj;
@@ -61,12 +60,13 @@ class Spill extends Component {
             itemCount={itemsData.length} 
             filterActive={this.state.showFilter} 
             showFilter={this.filterClick} 
+            hideFilter={this.filterClick}
             onGridClick={this.props.onGridClick}
           />
 
           <SortFilter 
-            show={this.state.showFilter} 
-            hideFilter={this.filterClick}
+            showFilter={this.state.showFilter} 
+            closeFilter={this.filterClick}
           />
 
           <ul className={"miniset-list" + this.props.cols + filtersActive}>{cards}</ul>
