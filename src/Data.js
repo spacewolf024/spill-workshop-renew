@@ -19,9 +19,9 @@ export default class Data {
           showColorbar: true
         }
       },
-      { name: "John's favorite Product", price: "$1.99", type: "product" },
+      { name: Data.randomNameGenerator() + "favorite Product", price: "$1.99", type: "product" },
       { name: "This product has a really long name", price: "$1.99 - $2.99", type: "product" },
-      { name: "John's Favorite Product", price: "$1.99", type: "product" },
+      { name: Data.randomNameGenerator() + "Favorite Product", price: "$1.99", type: "product" },
       { name: "CB2's FAVORITE PRODUCT", price: "$99999.99", type: "product" },
       { name: "Product name goes here", price: "$300 - $500", type: "product" },
       { name: "Lorem ipsum productsum", price: "$1000.00", type: "product" },
@@ -55,21 +55,22 @@ export default class Data {
       shippingMsg: '',
       lineLevelMessage: {
         primary: '',
-        shipping: '',
+        shipping: Data.randomShippingMsgGenerator(),
         marketing: ''
       },
+      showColorbar: Data.randomBoolGenerator(),
       colorBar: [
         {
           imagepath: '',
           altText: '',
-          showColorbar: '',
+          
           showPlus: '',
           sku: '',
           grouper: '',
           sor: ''
         }
       ],
-      isFavorited: '',
+      isFavorited: Data.randomBoolGenerator(),
       canFavorite: '',
       brand: '',
       images: [
@@ -83,6 +84,34 @@ export default class Data {
       optionChoice: '',
       baseLoggingUrl: ''
     }
+  }
+
+  static randomBoolGenerator() {
+    return (Data.getRandomNum() % 3 === 0 ) ? true : false;
+  }
+
+  static randomShippingMsgGenerator() {
+    return (Data.getRandomNum() % 3 === 0 ) ? "Free Shipping" : ""; 
+  }
+
+  static randomNameGenerator() {
+    if(Data.getRandomNum() % 5 === 0) {
+      return "Mike's ";
+    } else if (Data.getRandomNum() % 8 === 0) {
+      return "Sri's ";
+    }else if (Data.getRandomNum() % 6 === 0) {
+      return "John's ";
+    } else if (Data.getRandomNum() % 7 === 0) {
+      return "Mera's ";
+    } else if (Data.getRandomNum() % 4 === 0) {
+      return "Eric's ";
+    } else {
+      return "Steven's "
+    }
+  }
+
+  static getRandomNum() {
+    return (Math.floor(Math.random() * Math.floor(10)));
   }
 }
 
