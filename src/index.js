@@ -34,7 +34,7 @@ class App extends Component {
         <h2>Header</h2>
         <hr />
         <Breadcrumbs breadcrumbs={breadcrumbsData} />
-        
+        <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
           onGridClick={this.gridHandler}
