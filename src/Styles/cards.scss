@@ -1,6 +1,10 @@
 .blank-image {
   background: #ccc;
-  height: 350px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .theme-card {
@@ -11,8 +15,16 @@
 
 .blank-card {
   background: #fff;
-  height: auto;
-  min-width: 200px;
-  max-width: 800px;
+  position: relative;
+  padding-bottom: 100%;
+  width: 100%;
+
+  span {
+    display: block;
+  }
+}
+
+.product-info {
+  display: grid;
 }
 

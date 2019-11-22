@@ -38,8 +38,6 @@ class Spill extends Component {
       var obj = {...Data.dataObj(), ...itemsData[i]};
       itemsData[i] = obj;
     }
-    console.log(itemsData);
-    
     var themesData = Data.GetThemes();
     var cardsData = this.injectThemes(itemsData, themesData);
     var filtersActive = this.state.showFilter ? " active-filters" : "";

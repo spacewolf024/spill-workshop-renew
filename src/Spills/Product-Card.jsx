@@ -10,15 +10,19 @@ class ProductCard extends Component {
     const shippingMessage = this.props.item.lineLevelMessage && this.props.item.lineLevelMessage.shipping && <span>{this.props.item.lineLevelMessage.shipping}</span>;
 
     return (
-      <li className="blank-card">
-        <div className="blank-image"></div>
-        {favorite}
-        {colorbar}
-        {marketingMessage}
-        <span className="name">{this.props.item.name}</span>
-        <span className="price">{this.props.item.price}</span>
-        {primaryMessage}
-        {shippingMessage}
+      <li >
+        <div className="blank-card">
+          <div className="blank-image"></div>
+        </div>
+        <div className="product-info">
+          {favorite}
+          {colorbar}
+          {marketingMessage}
+          <span className="name">{this.props.item.name}</span>
+          <span className="price">{this.props.item.price}</span>
+          {primaryMessage}
+          {shippingMessage}
+        </div>
       </li>
     );
   }

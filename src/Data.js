@@ -99,7 +99,7 @@ export default class Data {
       return "Mike's ";
     } else if (Data.getRandomNum() % 8 === 0) {
       return "Sri's ";
-    }else if (Data.getRandomNum() % 6 === 0) {
+    } else if (Data.getRandomNum() % 6 === 0) {
       return "John's ";
     } else if (Data.getRandomNum() % 7 === 0) {
       return "Mera's ";
