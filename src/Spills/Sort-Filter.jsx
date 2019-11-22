@@ -14,9 +14,9 @@ class SortFilter extends Component {
   render() {
     var showHideClass = this.props.showFilter ? 'show-filter' : 'hide-filter';
     return (
-      <div className={showHideClass}>
+      <section className={showHideClass}>
         <button onClick={this.hideClick} className='hide-filter-btn'>Hide Filters</button>
-      </div>
+      </section>
     )
   }
 }

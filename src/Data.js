@@ -101,8 +101,8 @@ export default class Data {
   }
 
   static randomNameGenerator() {
-    var nameArr = ["Mike's ", "Sri's ", "John's ", "Mera's ", "Eric's ", "Jack's ", "Steven's " ];
-    return nameArr[Math.floor(Math.random() * Math.floor(7))];
+    var nameArr = ["Mike's ", "Sri's ", "John's ", "Mera's ", "Eric's ", "Jack's ", "Steven's ", "Lindsey's " ];
+    return nameArr[Math.floor(Math.random() * Math.floor(nameArr.length))];
   }
 
   static getLineLevelMsgGenerator() {
@@ -128,9 +128,12 @@ export default class Data {
       'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg?wid=625&hei=625',
       'https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg?wid=625&hei=625',
       'https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625'
+      'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/SeaSaltCaramelsSHF19/$web_spill_item$/190805112356/sea-salt-caramels.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/HolidayStripeMixBowlLrgSHF19/$web_spill_item$/190821133407/holiday-stripe-large-mixing-bowl.jpg?wid=625&hei=625'
+
     ];
-  return imageArr[Math.floor(Math.random() * Math.floor(8))];
+  return imageArr[Math.floor(Math.random() * Math.floor(imageArr.length))];
 
   }
 }

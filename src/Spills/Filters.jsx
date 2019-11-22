@@ -28,7 +28,7 @@ class Filters extends Component {
     //   checkedB: false,
     // });
     return (
-      <div>
+      <section>
         <ul className='filter-container'>
           <li className='sort-filter'>
             <button onClick={this.sortClickhandler}>Show Filter</button>
@@ -59,7 +59,7 @@ class Filters extends Component {
             <button className={'lrg-cols'}>Y cols</button>
           </li> */}
         </ul>
-      </div>
+      </section>
     )
   }
 }
