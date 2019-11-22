@@ -120,15 +120,16 @@ export default class Data {
   }
 
   static getImageUrl() {
-    var imageArr = [ 'https://images.crateandbarrel.com/is/image/Crate/RedRimBuffetPlateSHF16/$web_spill_item$/190411135354/red-rim-buffet-plate.jpg', 
-    'https://images.crateandbarrel.com/is/image/Crate/AminaDinnerPlateSHS20/$web_spill_item$/190926135355/amina-dinner-plate.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/WrenGreyDinnerPlateSHS20/$web_spill_item$/190927162448/wren-grey-dinner-plate.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/$web_spill_item$/191105171253/all-clad-d3-curated-4-qt-sautese.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg',
-    'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg'
-  ];
+    var imageArr = [ 
+      'https://images.crateandbarrel.com/is/image/Crate/RedRimBuffetPlateSHF16/$web_spill_item$/190411135354/red-rim-buffet-plate.jpg?wid=625&hei=625', 
+      'https://images.crateandbarrel.com/is/image/Crate/AminaDinnerPlateSHS20/$web_spill_item$/190926135355/amina-dinner-plate.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/WrenGreyDinnerPlateSHS20/$web_spill_item$/190927162448/wren-grey-dinner-plate.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/$web_spill_item$/191105171253/all-clad-d3-curated-4-qt-sautese.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg?wid=625&hei=625',
+      'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625'
+    ];
   return imageArr[Math.floor(Math.random() * Math.floor(8))];
 
   }
