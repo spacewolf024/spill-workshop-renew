@@ -7,6 +7,11 @@ export default class Data {
         lineLevelMessage: {
           primary: "Cyber Week Sale",
           marketing: "New Arrival"
+        },
+        images: {
+          base: Data.imageArr[0],
+          hover: "",
+          isHoverable: ""
         }
       },
       {
@@ -16,6 +21,11 @@ export default class Data {
         lineLevelMessage: {
           primary: "Cyber Week Sale",
           marketing: "New Arrival"
+        },
+        images: {
+          base: Data.imageArr[1],
+          hover: "",
+          isHoverable: ""
         }
       },
       {
@@ -25,20 +35,74 @@ export default class Data {
         colorbar: {
           showColorbar: true
         },
-        lineLevelMessage: Data.getLineLevelMsgGenerator()
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        images: {
+          base: Data.imageArr[2],
+          hover: "",
+          isHoverable: ""
+        }
       },
-      { name: Data.randomNameGenerator() + "favorite Product", price: "$1.99", type: "product" },
-      { name: "This product has a really long name", price: "$1.99 - $2.99", type: "product" },
-      { name: Data.randomNameGenerator() + "Favorite Product", price: "$1.99", type: "product" },
-      { name: "CB2's FAVORITE PRODUCT", price: "$99999.99", type: "product" },
-      { name: "Product name goes here", price: "$300 - $500", type: "product" },
-      { name: "Lorem ipsum productsum", price: "$1000.00", type: "product" },
-      { name: "Extra product, read all about it", price: "$300 - $500", type: "product" },
+      { name: Data.randomNameGenerator() + "favorite Product", price: "$1.99", type: "product", 
+        images: {
+          base: Data.imageArr[3],
+          hover: "",
+          isHoverable: ""
+        } 
+      },
+      { name: "This product has a really long name", price: "$1.99 - $2.99", type: "product",
+        images: {
+          base: Data.imageArr[4],
+          hover: "",
+          isHoverable: ""
+        } },
+      { name: Data.randomNameGenerator() + "Favorite Product", price: "$1.99", type: "product",
+        images: {
+          base: Data.imageArr[5],
+          hover: "",
+          isHoverable: ""
+        } },
+      { name: "CB2's FAVORITE PRODUCT",
+        price: "$99999.99",
+        type: "product",
+        images: {
+          base: Data.imageArr[6],
+          hover: "",
+          isHoverable: ""
+        } },
+      { name: "Product name goes here",
+        price: "$300 - $500",
+        type: "product",
+        images: {
+          base: Data.imageArr[7],
+          hover: "",
+          isHoverable: ""
+        } },
+      { name: "Lorem ipsum productsum",
+        price: "$1000.00",
+        type: "product",
+        images: {
+          base: Data.imageArr[8],
+          hover: "",
+          isHoverable: ""
+        } },
+      { name: "Extra product, read all about it",
+        price: "$300 - $500",
+        type: "product",
+        images: {
+          base: Data.imageArr[9],
+          hover: "",
+          isHoverable: ""
+        } },
       { 
         name: "Soo many products", 
         price: "$1000.00", 
         type: "product",
-        lineLevelMessage: Data.getLineLevelMsgGenerator()
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        images: {
+          base: Data.imageArr[10],
+          hover: "",
+          isHoverable: ""
+        }
       }
     ];
   }
@@ -101,8 +165,8 @@ export default class Data {
   }
 
   static randomNameGenerator() {
-    var nameArr = ["Mike's ", "Sri's ", "John's ", "Mera's ", "Eric's ", "Jack's ", "Steven's " ];
-    return nameArr[Math.floor(Math.random() * Math.floor(7))];
+    var nameArr = ["Mike's ", "Sri's ", "John's ", "Mera's ", "Eric's ", "Jack's ", "Steven's ", "Lindsey's " ];
+    return nameArr[Math.floor(Math.random() * Math.floor(nameArr.length))];
   }
 
   static getLineLevelMsgGenerator() {
@@ -119,18 +183,22 @@ export default class Data {
     return (Math.floor(Math.random() * Math.floor(10)));
   }
 
-  static getImageUrl() {
-    var imageArr = [ 
-      'https://images.crateandbarrel.com/is/image/Crate/RedRimBuffetPlateSHF16/$web_spill_item$/190411135354/red-rim-buffet-plate.jpg?wid=625&hei=625', 
-      'https://images.crateandbarrel.com/is/image/Crate/AminaDinnerPlateSHS20/$web_spill_item$/190926135355/amina-dinner-plate.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/WrenGreyDinnerPlateSHS20/$web_spill_item$/190927162448/wren-grey-dinner-plate.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/$web_spill_item$/191105171253/all-clad-d3-curated-4-qt-sautese.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg?wid=625&hei=625',
-      'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625'
-    ];
-  return imageArr[Math.floor(Math.random() * Math.floor(8))];
+  static imageArr = [ 
+    'https://images.crateandbarrel.com/is/image/Crate/RedRimBuffetPlateSHF16/$web_spill_item$/190411135354/red-rim-buffet-plate.jpg?wid=625&hei=625', 
+    'https://images.crateandbarrel.com/is/image/Crate/AminaDinnerPlateSHS20/$web_spill_item$/190926135355/amina-dinner-plate.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/WrenGreyDinnerPlateSHS20/$web_spill_item$/190927162448/wren-grey-dinner-plate.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/$web_spill_item$/191105171253/all-clad-d3-curated-4-qt-sautese.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/NylonSSCookieSpatulasS3SHS17/$web_spill_item$/190411135306/nylon-and-stainless-steel-cookie-spatulas-set-of-three.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/GoldAcaciaMeasuringSpoonsSHF18/$web_spill_item$/190411135059/acacia-wood-and-gold-measuring-spoons-set-of-4.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/EpicureanBgBlkSltRctCutBrdSHS19/$web_spill_item$/190411135028/epicurean-big-block-rectangular-slate-cutting-board.jpg?wid=625&hei=625',
+    'https://images.crateandbarrel.com/is/image/Crate/BerryBoxColander5p25inWhtSHF19/$web_spill_item$/190411134830/berry-box-white-colander.jpg?wid=625&hei=625'
+  ];
 
+  static getImageUrl() {
+    return Data.imageArr[Math.floor(Math.random() * Math.floor(Data.imageArr.length))];
   }
 }

@@ -12,9 +12,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      altCol: ""
+      altCol: ""  
     };
-
+    this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
   }
 
@@ -26,8 +26,31 @@ class App extends Component {
     }
   };
 
+  injectThemes = (products, themes) => {
+    //loop through themes and insert theme into the proper position with the products array
+    let cards = [...products]; //clone array
+    themes.forEach(theme => {
+      let position = theme.position - 1; //account for 0th item
+      if (products.length > position) {
+        cards.splice(position, 0, theme);
+      }
+    });
+    return cards;
+  }
+
   render() {
     let breadcrumbsData = Data.GetBreadcrumbs();
+    let productArr = Data.GetProducts();
+    let themeArr = Data.GetThemes();
+
+    for(var i = 0; i < productArr.length; i++) {
+      var obj = {...Data.dataObj(), ...productArr[i]};
+      productArr[i] = obj;
+    }
+
+    this.state = {
+      spillData: this.injectThemes(productArr, themeArr)
+    };
 
     return (
       <div>
@@ -37,6 +60,7 @@ class App extends Component {
         <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
+          spillDTO={this.state.spillData}
           onGridClick={this.gridHandler}
         />
       </div>
