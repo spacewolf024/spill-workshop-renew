@@ -15,8 +15,8 @@ class SpillList extends Component {
     });
 
     return (
-      <section>
-        <ul className={"miniset-list " + this.props.cols + filtersActive}>
+      <section className={filtersActive}>
+        <ul className={"miniset-list " + this.props.cols}>
             {cards}
         </ul>
       </section>
