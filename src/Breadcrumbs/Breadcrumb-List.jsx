@@ -8,7 +8,7 @@ class BreadcrumbList extends Component {
   render() {
     return (
       <li className="items" onClick={this.handleClick}>
-       <a>{this.props.crumb}</a>
+       <a href="#">{this.props.crumb}</a>
       </li>
     );
   }

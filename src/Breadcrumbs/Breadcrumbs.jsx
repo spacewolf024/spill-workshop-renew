@@ -38,7 +38,7 @@ class Breadcrumbs extends Component {
     renderList() {
         return this.state.mobileItems.map((item, index) => {
             return (
-                <li className="ani-items items" style={this.generatedListInlineStyle(index)}>
+                <li className="ani-items items" key={index} style={this.generatedListInlineStyle(index)}>
                     <span style={this.generatedSpanInlineStyle(index)}>{item}</span>
                 </li>
             );
@@ -74,12 +74,12 @@ class Breadcrumbs extends Component {
                     <ol className={this.state.class}>
                         <li className="items">Home</li>
                         <li className={"items " + this.state.meatClass} onClick={this.click} >
-                            <svg class="meatballs">
+                            <svg className="meatballs">
                                 <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                             </svg>
                         </li>
                         {list}
-                        <li class="items">Spill</li>
+                        <li className="items">Spill</li>
                     </ol>
                 </nav>
             )
