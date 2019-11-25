@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "../Styles/cards.scss";
 
-class ThemeCard extends Component {
+class ThemeCard extends PureComponent {
   render() {
     let height = this.props.height || 1;
     let width = this.props.width || 1;

@@ -17,18 +17,13 @@ class Filters extends Component {
     this.setState({ ...this.state, [name]: event.target.checked });
   };
 
-
   sortClickhandler = () => {
     this.props.showFilter(!this.props.filterActive);
   }
 
   render() {
-    // var [state, setState] = React.useState({
-    //   checkedA: true,
-    //   checkedB: false,
-    // });
     return (
-      <div>
+      <section>
         <ul className='filter-container'>
           <li className='sort-filter'>
             <button onClick={this.sortClickhandler}>Show Filter</button>
@@ -37,21 +32,20 @@ class Filters extends Component {
             <button>Sort by</button>
           </li>
           <li className="bops-switch">
-          <FormGroup row>
-            <FormControlLabel
-              label="Free Pickup in Store"
-              control={
-                <Switch
-                  // checked={this.state.checkedB}
-                  onChange={this.handleChange('checkedB')}
-                  value="checkedB"
-                  color="primary"
-                />
-              }
-            />
-          </FormGroup>
+            <FormGroup row>
+              <FormControlLabel
+                label="Free Pickup in Store"
+                control={
+                  <Switch
+                    onChange={this.handleChange('checkedB')}
+                    value="checkedB"
+                    color="primary"
+                  />
+                }
+              />
+            </FormGroup>
           </li>
-          <li className='item-count'>{this.props.itemCount} items
+          <li className='item-count'>11 items
             <GridSelector onGridClick={this.props.onGridClick} />
           </li>
           {/* <li className='col-switch'>
@@ -59,7 +53,7 @@ class Filters extends Component {
             <button className={'lrg-cols'}>Y cols</button>
           </li> */}
         </ul>
-      </div>
+      </section>
     )
   }
 }
