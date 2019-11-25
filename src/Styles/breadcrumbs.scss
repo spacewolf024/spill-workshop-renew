@@ -1,0 +1,183 @@
+.breadcrumbs {
+    list-style: none;
+ }
+ 
+ .breadcrumb-container::-webkit-scrollbar {
+  width: 0;
+  display: none;
+ }
+ 
+ .items {
+  padding-right: 5px;
+  display: inline-block;
+  text-transform: capitalize;
+ }
+ 
+ .items-anime {
+  padding-right: 5px;
+  display: inline-block;
+  text-transform: capitalize;
+ }
+ 
+ .items-anime:after {
+   content: " >";
+ }
+ 
+ a {
+   text-decoration: none;
+ }
+ 
+ a {
+   color: black;
+ }
+ 
+ a:visited {
+   color: black;
+ }
+ 
+ .items-anime:last-child:after {
+   content: '';
+ }
+ 
+ .items:after {
+   content: " >";
+ } 
+ 
+ .items:last-child:after {
+   content: '';
+ }
+ 
+ h2 {
+  text-align: center;
+ }
+ 
+ .animate-container {
+   float: right;
+   width: calc(100% - 35px);
+ }
+ 
+ .meatball-animate {
+   display: inline-block;
+ }
+ 
+ .animate-in {
+   animation-duration: .5s;
+   animation-name: animateIn;
+ }
+ 
+ .animate-out {
+   animation-duration: .5s;
+   animation-name: animateOut;
+ }
+ 
+ .animation-header {
+   text-align: center;
+ }
+ 
+ .hide {
+   display: none;
+ }
+ 
+ .breadcrumbs {
+   padding: 0 3px;
+   -webkit-overflow-scrolling: touch;
+ }
+ 
+ .sticky-meat {
+   position: absolute;
+   left: 5px;
+ }
+ 
+ .subtitle-container {
+  clear: both;
+  padding: 15px 0;
+ }
+ 
+ .sticky-meat ~ .items:first-of-type {
+   padding-left: 24px;
+ }
+ 
+ .meatballs {
+     color: #616161;
+     width: 24px;
+     cursor: pointer;
+     height: 16px;
+     margin-left: 4px;
+     margin-right: 4px;
+     border-radius: 2px;
+     background-color: #fff;
+ }
+ 
+  .meatball-list {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    text-align: right;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 0;
+    flex-grow: 1;
+    padding: 0;
+    align-items: baseline;
+    -webkit-overflow-scrolling: touch;
+    transition: 1s;
+  }
+ 
+  .meatball-list::-webkit-scrollbar {
+   width: 0;
+   display: none;
+ }
+ 
+ .meatball-header {
+   text-decoration: underline;
+ }
+ .sub-pic {
+   width: 100%;
+   padding-top: 10px;
+ }
+ 
+ .breadcrumbs {
+   margin-top: 0;
+ }
+ 
+ .expanded {
+   flex-direction: row !important;
+ }
+ 
+ @media screen and (min-width: 769px){
+   
+  .breadcrumb-container {
+    float: left;
+    display: block;
+    font-size: 12px;
+  }
+  
+  .meatball-header {
+     clear: both;
+     padding-top: 8px;
+   }
+ }
+ 
+ .ani-items {
+  max-width: 0;
+  padding-right: 0;
+  transform: scaleX(0.01);
+  transition: all 0.2s ease-in-out;
+}
+
+.actived .ani-items {
+  padding-right: 5px;
+  max-width: 200px;
+  transform: scaleX(1);
+}
+
+.ani-items span {
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.actived .ani-items span {
+  opacity: 1;
+}
