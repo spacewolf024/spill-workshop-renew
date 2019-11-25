@@ -2,8 +2,8 @@ import React from "react";
 import { Component } from "react";
 import { render } from "react-dom";
 import SpillLayout from "./Spills/Spill-Layout";
-import Data from "./Data";
-import Breadcrumbs from "./Breadcrumbs";
+import Data from "./Utils/Data";
+import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 
 import "./Styles/base.scss";
 
@@ -56,7 +56,9 @@ class App extends Component {
       <div>
         <h2>Header</h2>
         <hr />
-        <Breadcrumbs breadcrumbs={breadcrumbsData} />
+        <Breadcrumbs 
+          breadcrumbs={breadcrumbsData} 
+        />
         <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
