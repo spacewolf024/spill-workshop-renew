@@ -39,6 +39,7 @@ class Spill extends PureComponent {
           <SpillList
             showFilter={this.state.showFilter}
             spillDTO={this.props.spillDTO}
+            cols={this.props.cols}
           />
           
         </article>

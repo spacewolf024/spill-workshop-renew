@@ -4,7 +4,6 @@ import { render } from "react-dom";
 import SpillLayout from "./Spills/Spill-Layout";
 import Data from "./Utils/Data";
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
-
 import "./Styles/base.scss";
 
 
@@ -12,7 +11,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      altCol: ""  
+      altCol: "" ,
+      spillData: this.injectThemes()
     };
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
@@ -26,7 +26,15 @@ class App extends Component {
     }
   };
 
-  injectThemes = (products, themes) => {
+  injectThemes() {
+    let products = Data.GetProducts();
+    let themes = Data.GetThemes();
+
+    for(var i = 0; i < products.length; i++) {
+      var obj = {...Data.dataObj(), ...products[i]};
+      products[i] = obj;
+    }
+
     //loop through themes and insert theme into the proper position with the products array
     let cards = [...products]; //clone array
     themes.forEach(theme => {
@@ -39,26 +47,11 @@ class App extends Component {
   }
 
   render() {
-    let breadcrumbsData = Data.GetBreadcrumbs();
-    let productArr = Data.GetProducts();
-    let themeArr = Data.GetThemes();
-
-    for(var i = 0; i < productArr.length; i++) {
-      var obj = {...Data.dataObj(), ...productArr[i]};
-      productArr[i] = obj;
-    }
-
-    this.state = {
-      spillData: this.injectThemes(productArr, themeArr)
-    };
-
     return (
-      <div>
+      <div className="main">
         <h2>Header</h2>
         <hr />
-        <Breadcrumbs 
-          breadcrumbs={breadcrumbsData} 
-        />
+        <Breadcrumbs />
         <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
