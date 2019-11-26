@@ -43,3 +43,10 @@ ul, ol {
     margin: 0;
   }
 }
+
+@media only screen and (min-width: 1680px) {
+  body {
+    margin: 0 auto;
+    width: 1680px;
+  }
+}

@@ -2,19 +2,26 @@
   display: inline-block;
   width: 250px;
   height: 700px;
-  border: 1px solid #000;
+  border: 2px solid #CCC;
   position: sticky;
   top: 0;
-  margin-top: 5px;
+  border-top: none;
 }
 
 .hide-filter {
   display: none;
 }
 
+.sticky-filter-container {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+}
+
 .filter-container {
   display: inline-block;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
   height: 50px;
   width: 100%;
 
@@ -23,8 +30,28 @@
     padding: 0;
   }
 
-  .sort-filter {
-    margin-right: 10px;
+  .sort-filter.filter-hidden {
+    button {
+      margin-right: 10px;
+      background: #FFF;
+      color: black;
+
+      &:focus{
+        outline: none;
+      }
+    }
+  }
+
+  .sort-filter.filter-shown {
+    button {
+      padding: 15px 165px 15px 10px;
+      background: #000;
+      color: white !important;
+      margin-right: 23px;
+      &:focus{
+        outline: solid 1px #FFF;
+      }
+    }
   }
 
   .bops-filter {
