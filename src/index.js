@@ -12,10 +12,12 @@ class App extends Component {
     super();
     this.state = {
       altCol: "" ,
-      spillData: this.injectThemes()
+      spillData: this.injectThemes(),
+      mobile: this.windowWatcher()
     };
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
+    this.windowWatcher = this.windowWatcher.bind(this);
   }
 
   gridHandler() {
@@ -24,7 +26,23 @@ class App extends Component {
     } else {
       this.setState({ altCol: '' });
     }
-  };
+  }
+
+  windowWatcher() {
+    if (window.innerWidth < 769) {
+      this.setState({ mobile: true });
+      return true;
+    } else {
+      this.setState({ mobile: false });
+      return false;
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.windowWatcher);
+    this.windowWatcher();
+  }
+
 
   injectThemes() {
     let products = Data.GetProducts();
@@ -51,12 +69,15 @@ class App extends Component {
       <div className="main">
         <h2>Header</h2>
         <hr />
-        <Breadcrumbs />
+        <Breadcrumbs 
+          mobile={this.state.mobile}
+        />
         <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
           spillDTO={this.state.spillData}
           onGridClick={this.gridHandler}
+          mobile={this.state.mobile}
         />
       </div>
     );

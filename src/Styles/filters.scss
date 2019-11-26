@@ -1,6 +1,6 @@
 .show-filter {
   display: inline-block;
-  width: 250px;
+  width: 294px;
   height: 700px;
   border: 2px solid #CCC;
   position: sticky;
@@ -44,10 +44,11 @@
 
   .sort-filter.filter-shown {
     button {
-      padding: 15px 165px 15px 10px;
+      padding: 15px 210px 15px 10px;
       background: #000;
       color: white !important;
       margin-right: 23px;
+
       &:focus{
         outline: solid 1px #FFF;
       }
@@ -56,6 +57,25 @@
 
   .bops-filter {
     background: transparent;
+
+    button {
+      i {
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: 8px;
+      }
+      
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    
   }
 
   .item-count {

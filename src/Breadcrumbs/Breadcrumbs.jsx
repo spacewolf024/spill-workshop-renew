@@ -72,7 +72,7 @@ class Breadcrumbs extends Component {
     const list = this.renderList();
     if (this.state.meatballBreadcrumb) {
       return (
-        <nav>
+        <nav className="breadcrumbs">
           <ol className={this.state.class}>
             <li className="items">{this.state.breadcrumbs[0]}</li>
             <li className={"items " + this.state.meatClass} onClick={this.click}>
