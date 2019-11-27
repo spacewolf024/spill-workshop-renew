@@ -11,9 +11,20 @@ import "./Styles/base.scss";
 class App extends Component {
   constructor() {
     super();
+
+    let productArr = Data.GetProducts();
+    let themeArr = Data.GetThemes();
+
+    for(var i = 0; i < productArr.length; i++) {
+      var obj = {...Data.dataObj(), ...productArr[i]};
+      productArr[i] = obj;
+    }
+
     this.state = {
-      altCol: ""  
+      altCol: "",
+      spillData: this.injectThemes(productArr, themeArr)
     };
+
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
   }
@@ -40,17 +51,6 @@ class App extends Component {
 
   render() {
     let breadcrumbsData = Data.GetBreadcrumbs();
-    let productArr = Data.GetProducts();
-    let themeArr = Data.GetThemes();
-
-    for(var i = 0; i < productArr.length; i++) {
-      var obj = {...Data.dataObj(), ...productArr[i]};
-      productArr[i] = obj;
-    }
-
-    this.state = {
-      spillData: this.injectThemes(productArr, themeArr)
-    };
 
     return (
       <div>

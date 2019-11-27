@@ -1,3 +1,8 @@
+body {
+  margin:0;
+  padding:0;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -5,10 +10,10 @@ ul {
 }
 
 .spill-container {
-  margin: 30px 30px;
-  height: 100%;
+  padding: 30px 30px;
   display: inline-block;
-  width: calc(100% - 30px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
  .miniset-list {
