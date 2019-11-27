@@ -4,29 +4,22 @@ import { render } from "react-dom";
 import SpillLayout from "./Spills/Spill-Layout";
 import Data from "./Utils/Data";
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
-
 import "./Styles/base.scss";
 
 
 class App extends Component {
   constructor() {
     super();
-
-    let productArr = Data.GetProducts();
-    let themeArr = Data.GetThemes();
-
-    for(var i = 0; i < productArr.length; i++) {
-      var obj = {...Data.dataObj(), ...productArr[i]};
-      productArr[i] = obj;
-    }
-
+    
     this.state = {
-      altCol: "",
-      spillData: this.injectThemes(productArr, themeArr)
+      altCol: "" ,
+      spillData: this.injectThemes(),
+      mobile: this.windowWatcher()
     };
 
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
+    this.windowWatcher = this.windowWatcher.bind(this);
   }
 
   gridHandler() {
@@ -35,9 +28,33 @@ class App extends Component {
     } else {
       this.setState({ altCol: '' });
     }
-  };
+  }
 
-  injectThemes = (products, themes) => {
+  windowWatcher() {
+    if (window.innerWidth < 769) {
+      this.setState({ mobile: true });
+      return true;
+    } else {
+      this.setState({ mobile: false });
+      return false;
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.windowWatcher);
+    this.windowWatcher();
+  }
+
+
+  injectThemes() {
+    let products = Data.GetProducts();
+    let themes = Data.GetThemes();
+
+    for(var i = 0; i < products.length; i++) {
+      var obj = {...Data.dataObj(), ...products[i]};
+      products[i] = obj;
+    }
+
     //loop through themes and insert theme into the proper position with the products array
     let cards = [...products]; //clone array
     themes.forEach(theme => {
@@ -50,20 +67,19 @@ class App extends Component {
   }
 
   render() {
-    let breadcrumbsData = Data.GetBreadcrumbs();
-
     return (
-      <div>
+      <div className="main">
         <h2>Header</h2>
         <hr />
         <Breadcrumbs 
-          breadcrumbs={breadcrumbsData} 
+          mobile={this.state.mobile}
         />
         <h1>Kitchen Tools and Accessories</h1>
         <SpillLayout 
           cols={this.state.altCol} 
           spillDTO={this.state.spillData}
           onGridClick={this.gridHandler}
+          mobile={this.state.mobile}
         />
       </div>
     );

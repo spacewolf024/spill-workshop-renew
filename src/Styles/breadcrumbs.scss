@@ -1,5 +1,8 @@
 .breadcrumbs {
     list-style: none;
+    span, li, a {
+      font-size: 12px;
+    }
  }
  
  .breadcrumb-container::-webkit-scrollbar {
@@ -12,7 +15,7 @@
   display: inline-block;
   text-transform: capitalize;
  }
- 
+
  .items-anime {
   padding-right: 5px;
   display: inline-block;
@@ -152,14 +155,20 @@
     float: left;
     display: block;
     font-size: 12px;
+
+    span, li, a {
+      font-size: 12px;
+    }
+    
   }
-  
+
   .meatball-header {
      clear: both;
      padding-top: 8px;
    }
  }
- 
+
+
  .ani-items {
   max-width: 0;
   padding-right: 0;

@@ -7,8 +7,14 @@ import '../Styles/filters.scss';
 
 class Filters extends Component {
 
-  constructor(props) {  
+  constructor(props) {
     super(props);
+
+    this.state = ({
+      filterActiveClass: this.props.filterActive ? 'filter-shown' : 'filter-hidden',
+      filterBtnText: this.props.mobile ? 'Sort & Filter' : 'Show Filter',
+      itemCount: this.props.itemCount.filter((item, index) => (item.type === 'product'))
+    });
     this.sortClickhandler = this.sortClickhandler.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -17,21 +23,28 @@ class Filters extends Component {
     this.setState({ ...this.state, [name]: event.target.checked });
   };
 
-  sortClickhandler = () => {
-    this.props.showFilter(!this.props.filterActive);
+  sortClickhandler() {
+    if (!this.props.filterActive) {
+      this.props.showFilter(!this.props.filterActive);
+      var btnText = this.props.mobile ? 'Sort & Filter' : 'Hide Filter'
+      this.setState({
+        filterActiveClass: ' filter-shown',
+        filterBtnText: btnText
+      });
+    } else {
+      this.props.showFilter(!this.props.filterActive);
+      var btnText = this.props.mobile ? 'Sort & Filter' : 'Show Filter'
+      this.setState({
+        filterActiveClass: 'filter-hidden',
+        filterBtnText: btnText
+      });
+    }
   }
 
   render() {
     return (
-      <section>
-        <ul className='filter-container'>
-          <li className='sort-filter'>
-            <button onClick={this.sortClickhandler}>Show Filter</button>
-          </li>
-          <li className='bops-filter'>
-            <button>Sort by</button>
-          </li>
-          <li className="bops-switch">
+      <section className="sticky-filter-container">
+        {/* <li className="bops-switch">
             <FormGroup row>
               <FormControlLabel
                 label="Free Pickup in Store"
@@ -44,8 +57,16 @@ class Filters extends Component {
                 }
               />
             </FormGroup>
+          </li> */}
+        <ul className='filter-container'>
+          <li className={'sort-filter ' + this.state.filterActiveClass}>
+            <button onClick={this.sortClickhandler}>{this.state.filterBtnText}</button>
           </li>
-          <li className='item-count'>11 items
+          <li className='bops-filter'>
+            <button>Sort by<i></i></button>
+          </li>
+
+          <li className='item-count'>{this.state.itemCount.length} items
             <GridSelector onGridClick={this.props.onGridClick} />
           </li>
           {/* <li className='col-switch'>
