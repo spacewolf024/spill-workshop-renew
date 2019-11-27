@@ -33,9 +33,6 @@ export default class Data {
         name: "Groovy Product",
         price: "$149.99 - $299",
         type: "product",
-        colorbar: {
-          showColorbar: true
-        },
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
         images: {
           base: Data.imageArr[2],
@@ -152,16 +149,15 @@ export default class Data {
       shippingMsg: Data.randomShippingMsgGenerator(),
       lineLevelMessage: Data.getLineLevelMsgGenerator(),
       showColorbar: Data.randomBoolGenerator(),
-      colorBar: [
+      colorBar: 
         {
-          imagepath: "",
-          altText: "",
-          showPlus: "",
-          sku: "",
-          grouper: "",
-          sor: ""
-        }
-      ],
+          imagepath: Data.randomColorBarCreator(),
+          altText: '',
+          showPlus: '',
+          sku: '',
+          grouper: '',
+          sor: ''
+        },
       isFavorited: Data.randomBoolGenerator(),
       canFavorite: "",
       brand: "",
@@ -174,6 +170,19 @@ export default class Data {
       optionChoice: "",
       baseLoggingUrl: ""
     };
+  }
+
+  static randomHexGenerator(){
+    return "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+  }
+
+  static randomColorBarCreator(){
+    let colorbarImages = [];
+    const randomNum = Math.ceil(Math.random() * 16);
+    for(let i = 0; i < randomNum; i++){
+      colorbarImages.push(Data.randomHexGenerator());
+    }
+    return colorbarImages;
   }
 
   static randomBoolGenerator() {

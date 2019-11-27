@@ -10,11 +10,13 @@ import "./Styles/base.scss";
 class App extends Component {
   constructor() {
     super();
+    
     this.state = {
       altCol: "" ,
       spillData: this.injectThemes(),
       mobile: this.windowWatcher()
     };
+
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
     this.windowWatcher = this.windowWatcher.bind(this);
