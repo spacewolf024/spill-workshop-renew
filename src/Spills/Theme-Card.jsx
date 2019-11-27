@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import "../Styles/cards.scss";
+import "../Styles/product-card.scss";
 
 class ThemeCard extends PureComponent {
   render() {

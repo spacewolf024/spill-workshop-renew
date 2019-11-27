@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       altCol: "" ,
       spillData: this.injectThemes(),
-      mobile: this.windowWatcher()
+      isMobile: this.windowWatcher()
     };
     this.injectThemes = this.injectThemes.bind(this);
     this.gridHandler = this.gridHandler.bind(this);
@@ -30,10 +30,10 @@ class App extends Component {
 
   windowWatcher() {
     if (window.innerWidth < 769) {
-      this.setState({ mobile: true });
+      this.setState({ isMobile: true });
       return true;
     } else {
-      this.setState({ mobile: false });
+      this.setState({ isMobile: false });
       return false;
     }
   }
@@ -67,17 +67,22 @@ class App extends Component {
   render() {
     return (
       <div className="main">
+
         <h2>Header</h2>
         <hr />
-        <Breadcrumbs 
-          mobile={this.state.mobile}
-        />
-        <h1>Kitchen Tools and Accessories</h1>
+
+        <div className="page-header">
+          <Breadcrumbs 
+            isMobile={this.state.isMobile}
+          />
+          <h1>Kitchen Tools and Accessories</h1>
+        </div>
+        
         <SpillLayout 
           cols={this.state.altCol} 
           spillDTO={this.state.spillData}
           onGridClick={this.gridHandler}
-          mobile={this.state.mobile}
+          isMobile={this.state.isMobile}
         />
       </div>
     );

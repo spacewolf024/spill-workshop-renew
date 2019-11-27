@@ -17,7 +17,7 @@ class Spill extends PureComponent {
 
   filterClick = (show) => {
     this.setState({showFilter: show});
-  };
+  }
 
   render() {
     return (
@@ -29,16 +29,15 @@ class Spill extends PureComponent {
             showFilter={this.filterClick} 
             hideFilter={this.filterClick}
             onGridClick={this.props.onGridClick}
-            mobile={this.props.mobile}
+            isMobile={this.props.isMobile}
             itemCount={this.props.spillDTO}
-            filterActive={this.state.showFilter}
-            key={this.props.mobile}
+            key={this.props.isMobile}
           />
 
           <SortFilter 
             showFilter={this.state.showFilter} 
             closeFilter={this.filterClick}
-            mobile={this.props.mobile}
+            isMobile={this.props.isMobile}
 
           />
 
@@ -46,7 +45,7 @@ class Spill extends PureComponent {
             showFilter={this.state.showFilter}
             spillDTO={this.props.spillDTO}
             cols={this.props.cols}
-            mobile={this.props.mobile}
+            isMobile={this.props.isMobile}
           />
           
         </article>

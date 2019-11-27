@@ -18,9 +18,8 @@ class Breadcrumbs extends Component {
 
   active = true;
 
-  handleClick = () => {
+  handleClick() {
     this.props.onListClick(!this.state.meatballClick);
-    console.log(this.props.cats);
   };
 
   generatedListInlineStyle(index) {

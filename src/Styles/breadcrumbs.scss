@@ -149,7 +149,7 @@
    flex-direction: row !important;
  }
  
- @media screen and (min-width: 769px){
+ @media screen and (min-width: 599px){
    
   .breadcrumb-container {
     float: left;
@@ -159,7 +159,6 @@
     span, li, a {
       font-size: 12px;
     }
-    
   }
 
   .meatball-header {

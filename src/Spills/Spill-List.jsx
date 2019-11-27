@@ -4,7 +4,7 @@ import ThemeCard from "./Theme-Card";
 
 class SpillList extends Component {
   render() {
-    var filtersActive = this.props.showFilter ? " active-filters" : "";
+    var filtersActive = this.props.showFilter ? "active-filters" : 'deactivate-filters';
 
     var cards = this.props.spillDTO.map((item, index) => {
       if (item.type === "theme") {
