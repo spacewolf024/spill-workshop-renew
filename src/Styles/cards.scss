@@ -57,38 +57,3 @@
     }
   }
 }
-
-@media screen and (min-width: 769px) {
-  .product-info {
-    padding-bottom: 40px;
-  }
-}
-
-@media screen and (max-width: 769px) {
-  .product-info {
-    padding-bottom: 30px;
-  }
-}
-
-.fav-btn {
-  background: transparent;
-  border: none;
-  z-index: 1;
-}
-
-#svg-icon-heart-outline {
-  color: #999;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 10px;
-}
-
-
-
-
-
-
-
-
-

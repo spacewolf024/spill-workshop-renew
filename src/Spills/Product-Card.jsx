@@ -3,8 +3,7 @@ import "../Styles/product-card.scss";
 
 class ProductCard extends Component {
   render() {
-
-    const colorbar = this.props.item.showColorbar && <div>ColorBar</div>;
+    const colorbar = this.props.item.showColorbar && <ProductColorbar colorbar={this.props.item.colorBar} />
     const favorite = this.props.item.showFavorite && <div>Favorite</div>;
     const marketingMessage = this.props.item.lineLevelMessage && this.props.item.lineLevelMessage.marketing && <span>{this.props.item.lineLevelMessage.marketing}</span>;
     const primaryMessage = this.props.item.lineLevelMessage && this.props.item.lineLevelMessage.primary && <span>{this.props.item.lineLevelMessage.primary}</span>;
