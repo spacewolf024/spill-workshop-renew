@@ -178,7 +178,7 @@ export default class Data {
 
   static randomColorBarCreator(){
     let colorbarImages = [];
-    const randomNum = Math.ceil(Math.random() * 16);
+    const randomNum = Math.ceil(Math.random() * 12);
     for(let i = 0; i < randomNum; i++){
       colorbarImages.push(Data.randomHexGenerator());
     }
