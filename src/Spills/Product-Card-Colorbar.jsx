@@ -2,8 +2,8 @@ import React from 'react';
 
 function Colorbar(props){
 
-    const colorBar = props.colorbar.imagepath.map((el)=>{
-        return <button className="product-colorbar-button" style={{backgroundColor: el}}></button>
+    const colorBar = props.colorbar.imagepath.map((el, index)=>{
+        return <button className="product-colorbar-button" key={index} style={{backgroundColor: el}}></button>
     })
 
     return (

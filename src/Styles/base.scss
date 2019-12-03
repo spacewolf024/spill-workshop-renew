@@ -38,14 +38,15 @@ ul, ol {
 }
 
 @media only screen and (max-width: 600px) {
-  .page-header, .sticky-filter-container {
-    padding: 0 12px;
-  }
+
 }
 
 @media only screen and (max-width: 768px) {
   h1 {
     font-size: 22px;
+  }
+  .page-header, .sticky-filter-container {
+    padding: 0 12px;
   }
 }
 

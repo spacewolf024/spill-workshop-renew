@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProductColorbar from "./Product-Card-Colorbar";
+
 import "../Styles/product-card.scss";
 
 class ProductCard extends Component {

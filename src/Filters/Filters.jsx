@@ -5,6 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import '../Styles/filters.scss';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import SimpleModal from '../Utils/Modal';
 
 class Filters extends Component {
 
@@ -27,25 +28,27 @@ class Filters extends Component {
 
   filterBtnClick() {
     var btnText = '';
-    if(this.props)
-    if (!this.props.filterActive && !this.props.isMobile) {
+    if (this.props.isMobile) {
 
-      this.props.showFilter(!this.props.filterActive);
-      btnText = this.props.isMobile ? 'Sort & Filter' : 'Hide Filter'
-      this.setState({
-        filterActiveClass: ' filter-shown',
-        filterBtnText: btnText
-      });
+    } else {
+      if (!this.props.filterActive) {
 
-    } else if (this.props.filterActive && !this.props.isMobile) {
-
-      this.props.showFilter(!this.props.filterActive);
-      btnText = this.props.isMobile ? 'Sort & Filter' : 'Show Filter'
-      this.setState({
-        filterActiveClass: 'filter-hidden',
-        filterBtnText: btnText
-      });
-
+        this.props.showFilter(!this.props.filterActive);
+        btnText = this.props.isMobile ? 'Sort & Filter' : 'Hide Filter'
+        this.setState({
+          filterActiveClass: ' filter-shown',
+          filterBtnText: btnText
+        });
+  
+      } else if (this.props.filterActive) {
+  
+        this.props.showFilter(!this.props.filterActive);
+        btnText = this.props.isMobile ? 'Sort & Filter' : 'Show Filter'
+        this.setState({
+          filterActiveClass: 'filter-hidden',
+          filterBtnText: btnText
+        });
+      }
     }
   }
 
