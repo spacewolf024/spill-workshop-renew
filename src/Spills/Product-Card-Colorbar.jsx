@@ -6,9 +6,11 @@ function Colorbar(props){
         return <button className="product-colorbar-button" key={index} style={{backgroundColor: el}}></button>
     })
 
+    const showMoreButton = props.colorbar.imagepath.length >= 12 ? <button className="show-more-colors-btn">+</button> : ''
+
     return (
         <div className="product-colorbar">
-            {colorBar}
+            {colorBar}{showMoreButton}
         </div>
     )
 }
