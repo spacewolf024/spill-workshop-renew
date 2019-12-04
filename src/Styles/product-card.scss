@@ -68,6 +68,20 @@
   .product-info {
     padding-bottom: 30px;
   }
+  .miniset-list {
+    li:nth-of-type(odd) {
+      .product-info {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .miniset-list.alt {
+      .product-info {
+        padding-left: 10px;
+      }
+  }
+ 
 }
 
 .fav-btn {

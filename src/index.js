@@ -5,7 +5,8 @@ import SpillLayout from "./Spills/Spill-Layout";
 import Data from "./Utils/Data";
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 import "./Styles/base.scss";
-
+import dsktp_header from "./Styles/Images/header-dsktp.png"
+import mobile_header from "./Styles/Images/header-mobile.png"
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,9 @@ class App extends Component {
     this.state = {
       altCol: "" ,
       spillData: this.injectThemes(),
-      isMobile: this.windowWatcher()
+      isMobile: this.windowWatcher(),
+      header: this.isMobile ? mobile_header : dsktp_header,
+      headerClass: this.isMobile ? "mobile-header" : "desktop-header"
     };
 
     this.injectThemes = this.injectThemes.bind(this);
@@ -32,10 +35,10 @@ class App extends Component {
 
   windowWatcher() {
     if (window.innerWidth < 769) {
-      this.setState({ isMobile: true });
+      this.setState({ isMobile: true, header: mobile_header, headerClass: "mobile-header" });
       return true;
     } else {
-      this.setState({ isMobile: false });
+      this.setState({ isMobile: false, header: dsktp_header, headerClass: "desktop-header" });
       return false;
     }
   }
@@ -69,9 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-
-        <h2>Header</h2>
-        <hr />
+        <img className={"header-img " + this.state.headerClass} src={this.state.header} />
 
         <div className="page-header">
           <Breadcrumbs 

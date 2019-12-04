@@ -37,6 +37,10 @@ ul, ol {
   list-style: none;
 }
 
+.header-img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
 
 }
@@ -53,6 +57,10 @@ ul, ol {
 @media only screen and (min-width: 769px) {
   .main {
     margin: 0 30px;
+  }
+
+  .desktop-header {
+    min-width: 1050px;
   }
 }
 
