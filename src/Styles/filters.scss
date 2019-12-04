@@ -2,18 +2,19 @@
   display: inline-block;
   width: 294px;
   height: 900px;
-  border: 2px solid #CCC;
+  border: solid 1px #CCC;
   position: sticky;
   top: 0;
   transform: scaleY(1);
-  transition: height .75s;  
+  transition: height .25s; 
+  transition-delay: .25s;
 }
 
 .hide-filter {
   width: 0;
   height: 0;
   transform: scale(0);
-  transition: width .33s ease-in-out;  
+  transition: width .25s ease-in-out;  
 }
 
 .sticky-filter-container {
@@ -36,7 +37,7 @@
 
 .filter-container {
   display: inline-block;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 0 0;
   height: 50px;
   width: 100%;
 
@@ -62,9 +63,10 @@
 
   .sort-filter.filter-shown {
     button {
-      padding: 15px 210px 15px 10px;
-      background: #CCCCCC;
+      padding: 15px 206px 15px 10px;
+      background: rgba(204,204,204,0.21);
       color: #222 !important;
+      border: solid 2px #CCC;
       margin-right: 23px;
       transform: translateX(0%);
       transition: 0.33s ease-out, left 0.33s ease-out, width 0s ease-out 0.33s;

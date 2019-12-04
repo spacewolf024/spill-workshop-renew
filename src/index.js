@@ -47,7 +47,6 @@ class App extends Component {
     this.windowWatcher();
   }
 
-
   injectThemes() {
     let products = Data.GetProducts();
     let themes = Data.GetThemes();
