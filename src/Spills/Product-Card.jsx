@@ -12,10 +12,10 @@ class ProductCard extends Component {
     const shippingMessage = this.props.item.lineLevelMessage && this.props.item.lineLevelMessage.shipping && <span>{this.props.item.lineLevelMessage.shipping}</span>;
 
     return (
-      <li>
-        <div className="blank-card">
-          <div className="blank-image">
-            <img className="blank-image" alt={this.props.item.images.base} src={this.props.item.images.base} />
+      <li className="product-card">
+        <div className="product-card-top">
+          <div className="product-image">
+            <img className="product-image" alt={this.props.item.images.base} src={this.props.item.images.base} />
             <button className="fav-btn">
               <svg id="svg-icon-heart-outline" viewBox="0 0 32 32">
                 <title>Favorites</title>

@@ -7,8 +7,8 @@ class ThemeCard extends PureComponent {
     let width = this.props.width || 1;
     let gridClass = `grid-${width}x${height}`;
     return (
-      <li className={`theme-card blank-card ${gridClass}`}>
-        <div className="blank-image"></div>
+      <li className={`theme-card product-card ${gridClass}`}>
+        <div className="theme"></div>
       </li>
     );
   }

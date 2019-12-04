@@ -26,8 +26,8 @@ class App extends Component {
   }
 
   gridHandler() {
-    if(this.state.altCol !== ' alt') {
-      this.setState({ altCol: ' alt' });
+    if(this.state.altCol !== ' alt-columns') {
+      this.setState({ altCol: ' alt-columns' });
     } else {
       this.setState({ altCol: '' });
     }
