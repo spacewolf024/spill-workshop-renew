@@ -15,7 +15,6 @@ class App extends Component {
     this.state = {
       altCol: "" ,
       spillData: this.injectThemes(),
-      isMobile: this.windowWatcher(),
       header: this.isMobile ? mobile_header : dsktp_header,
       headerClass: this.isMobile ? "mobile-header" : "desktop-header"
     };
