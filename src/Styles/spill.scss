@@ -20,9 +20,14 @@ ul {
   grid-gap: 10px;
 }
 
-.deactive-filters {
-  transition: transform scaleX(0);
-  transition: left 0.73s ease-out;  
+.active-filters {
+  float: right;
+  width: calc(100% - 310px);
+}
+
+.deactivate-filters {
+  float: right;
+  width: 100%;
 }
 
 .name {
@@ -32,14 +37,7 @@ ul {
 }
 
 .product-card-container {
-  width: 100%;
-}
-
-.active-filters {
-  float: right;
-  width: calc(100% - 310px);
-  transition: .33s ease-out;
-  transform: scaleX(1);
+  transition: 300ms width ease-out;
 }
 
 @media screen and (max-width: 599px) {
