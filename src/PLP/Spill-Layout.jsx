@@ -1,8 +1,8 @@
 import React from "react";
 import { PureComponent } from "react";
 import SpillList from "./Spill-List";
-import Filters from "../Filters/Filters";
-import SortFilter from "../Filters/Sort-Filter";
+import Filters from "../Filters/Filter-Header";
+import SortFilter from "../Filters/Filter-Container";
 
 import "../Styles/spill.scss";
 
