@@ -1,4 +1,4 @@
-.blank-image {
+.product-image {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -7,12 +7,13 @@
 }
 
 .theme-card {
-  .blank-image {
+  .theme {
     background: #888;
+    height: 100%;
   }
 }
 
-.blank-card {
+.product-card-top {
   background: #fff;
   position: relative;
   padding-bottom: 100%;
@@ -93,7 +94,6 @@
         padding-left: 10px;
       }
   }
- 
 }
 
 .fav-btn {
@@ -108,6 +108,14 @@
   height: 25px;
   position: absolute;
   right: 10px;
+
+  svg path {
+    fill: white
+  }
+}
+
+#svg-icon-heart-outline > path {
+  fill: rgba(245, 243, 243, 0.521) !important;
 }
 
 

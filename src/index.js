@@ -15,7 +15,6 @@ class App extends Component {
     this.state = {
       altCol: "" ,
       spillData: this.injectThemes(),
-      isMobile: this.windowWatcher(),
       header: this.isMobile ? mobile_header : dsktp_header,
       headerClass: this.isMobile ? "mobile-header" : "desktop-header"
     };
@@ -26,8 +25,8 @@ class App extends Component {
   }
 
   gridHandler() {
-    if(this.state.altCol !== ' alt') {
-      this.setState({ altCol: ' alt' });
+    if(this.state.altCol !== ' alt-columns') {
+      this.setState({ altCol: ' alt-columns' });
     } else {
       this.setState({ altCol: '' });
     }
@@ -47,7 +46,6 @@ class App extends Component {
     window.addEventListener("resize", this.windowWatcher);
     this.windowWatcher();
   }
-
 
   injectThemes() {
     let products = Data.GetProducts();

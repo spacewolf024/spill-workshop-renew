@@ -1,17 +1,20 @@
 .show-filter {
   display: inline-block;
   width: 294px;
-  height: 700px;
-  border: 2px solid #CCC;
+  height: 900px;
+  border: solid 1px #CCC;
   position: sticky;
   top: 0;
-  transform: translateX(0%);
-  transition: 0.33s ease-out, left 0.33s ease-out, width 0s ease-out 0.33s;
+  transform: scaleY(1);
+  transition: height .45s; 
+  transition-delay: .25s;
 }
 
 .hide-filter {
-  transform: translateX(-50%);
-  transition: 0.33s ease-out, left 0.33s ease-out, width 0s ease-out 0.33s;  
+  width: 0;
+  height: 0;
+  transform: scale(0);
+  transition: width .3s ease-in-out;  
 }
 
 .sticky-filter-container {
@@ -34,7 +37,7 @@
 
 .filter-container {
   display: inline-block;
-  padding: 30px 0 10px 0;
+  padding: 30px 0 0 0;
   height: 50px;
   width: 100%;
 
@@ -60,9 +63,10 @@
 
   .sort-filter.filter-shown {
     button {
-      padding: 15px 210px 15px 10px;
-      background: #000;
-      color: white !important;
+      padding: 15px 206px 15px 10px;
+      background: rgba(204,204,204,0.21);
+      color: #222 !important;
+      border: solid 1px #CCC;
       margin-right: 23px;
       transform: translateX(0%);
       transition: 0.33s ease-out, left 0.33s ease-out, width 0s ease-out 0.33s;
@@ -119,14 +123,36 @@
     float: right;
   }
 
-  .small-cols {
-    background: transparent;
-    border: none;
+  .inactive-btn {
+    opacity: 0.5;
   }
 
-  .lrg-cols {
-    background: transparent;
+  .two-col {
+    background-image: url('./Images/two-col.PNG');
+    background-repeat: no-repeat;    
     border: none;
+    height: 44px;
+    width: 44px;
+    position: relative;
+    top: 11px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .single-col {
+    background-image: url('./Images/single-col.PNG');
+    background-repeat: no-repeat;
+    border: none;
+    position: relative;
+    top: 11px;
+    height: 44px;
+    width: 44px;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .active-cols {
@@ -192,7 +218,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .item-count > .MuiFormGroup-row {
+  .col-switch {
     display: none !important;
   }
 

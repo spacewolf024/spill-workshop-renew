@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import GridSelector from './Grid-Selector';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import '../Styles/filters.scss';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import SimpleModal from '../Utils/Modal';
+// import SimpleModal from '../Utils/Modal';
+import '../Styles/filters.scss';
+
 
 class Filters extends Component {
 
@@ -15,15 +15,39 @@ class Filters extends Component {
     this.state = ({
       filterActiveClass: this.props.filterActive ? 'filter-shown' : 'filter-hidden',
       filterBtnText: this.props.isMobile ? 'Sort & Filter' : 'Show Filter',
-      itemCount: this.props.itemCount.filter((item, index) => (item.type === 'product'))
+      itemCount: this.props.itemCount.filter((item, index) => (item.type === 'product')),
+      twoColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'active-btn' : 'inactive-btn',
+      singleColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'inactive-btn' : 'active-btn'
     });
 
     this.filterBtnClick = this.filterBtnClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.onGridClick = this.onGridClick.bind(this);
   }
 
   handleChange = name => event => {
+    console.log(name, event)
     this.setState({ ...this.state, [name]: event.target.checked });
+  }
+
+  onGridClick(event) {
+    if (event.target.classList.value.indexOf('inactive-btn') > -1 && event.target.classList.value.indexOf('two-col') > -1) {
+      this.props.onGridClick();
+
+      this.setState ({
+        twoColBtnClass: 'active-btn',
+        singleColBtnClass: 'inactive-btn'
+      });
+
+    } else if (event.target.classList.value.indexOf('inactive-btn') > -1 && event.target.classList.value.indexOf('single-col') > -1) {
+      this.props.onGridClick();
+
+      this.setState ({
+        twoColBtnClass: 'inactive-btn',
+        singleColBtnClass: 'active-btn'
+      });
+      
+    }
   }
 
   filterBtnClick() {
@@ -79,14 +103,10 @@ class Filters extends Component {
           <li className='bops-filter'>
             <button>Sort by<i></i></button>
           </li>
-
-          <li className='item-count'>{this.state.itemCount.length} items
-            <GridSelector onGridClick={this.props.onGridClick} />
-          </li>
-          {/* <li className='col-switch'>
-            <button className={'small-cols'}>X cols</button>
-            <button className={'lrg-cols'}>Y cols</button>
-          </li> */}
+          <li className='col-switch'>
+            <button className={'two-col ' + this.state.twoColBtnClass } onClick={this.onGridClick}></button>
+            <button className={'single-col ' + this.state.singleColBtnClass} onClick={this.onGridClick}></button>
+          </li> 
         </ul>
       </section>
     )
