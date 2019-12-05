@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Filters from "./Filters";
 import '../Styles/filters.scss';
 
 class SortFilter extends Component {
@@ -15,6 +16,7 @@ class SortFilter extends Component {
     var showHideClass = this.props.showFilter ? 'show-filter' : 'hide-filter';
     return (
       <section className={showHideClass}>
+        <Filters />
       </section>
     )
   }

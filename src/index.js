@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import { render } from "react-dom";
-import SpillLayout from "./Spills/Spill-Layout";
+import SpillLayout from "./PLP/Spill-Layout";
 import Data from "./Utils/Data";
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 import "./Styles/base.scss";
@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-        <img className={"header-img " + this.state.headerClass} src={this.state.header} />
+        <img className={"header-img " + this.state.headerClass} src={this.state.header} alt="header" />
 
         <div className="page-header">
           <Breadcrumbs 
