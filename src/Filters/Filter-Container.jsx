@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Filters from "./Filters";
 import '../Styles/filters.scss';
 
-class SortFilter extends Component {
+class FilterContainer extends Component {
   constructor(props) {  
     super(props);
     this.hideClick = this.hideClick.bind(this);
@@ -22,4 +22,4 @@ class SortFilter extends Component {
   }
 }
 
-export default SortFilter;
+export default FilterContainer;

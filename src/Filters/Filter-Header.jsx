@@ -7,7 +7,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import '../Styles/filters.scss';
 
 
-class Filters extends Component {
+class FilterHeader extends Component {
 
   constructor(props) {
     super(props);
@@ -113,4 +113,4 @@ class Filters extends Component {
   }
 }
 
-export default Filters;
+export default FilterHeader;

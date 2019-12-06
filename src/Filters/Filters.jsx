@@ -1,97 +1,296 @@
 import React from 'react';
+import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import AddIcon from '@material-ui/icons/Add';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    tranform: 'scaleY(1)'
-  },
-  heading: {
-    fontSize: '14px !important',
-    flexBasis: '100%',
-    flexShrink: 0,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
-    color: theme.palette.text.secondary,
-  },
-}));
+const useStyles = makeStyles({
+    root: {
+        width: '100%',
+    },
+    panel: {
+        height: '66px'
+    }
+});
 
-export default function Filters() {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+export default function ActionsInExpansionPanelSummary() {
+    const classes = useStyles();
 
-  const handleChange = panel => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+    return (
+        <div className={classes.root}>
+            <div className="bops-switch-filter">
+                <FormGroup row>
+                    <FormControlLabel
+                        control={
+                            <Switch
+                                value="checkedB"
+                                color="primary"
+                            />
+                        }
+                    />
+                </FormGroup>
+                <span className="location-icon"><LocationOnIcon /></span>
+                <span className="pickup-store-txt">Free Pickup in Store</span>
+                <span className="store-name">Deer Park Town Center</span>
 
-  return (
-    <div className={classes.root}>
-      <ExpansionPanel square className={classes.panels} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <ExpansionPanelSummary
-          expandIcon={<AddIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
-        >
-          <Typography className={classes.heading}>Free Pick Up In Store</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-            maximus est, id dignissim quam.
+            </div>
+            <ExpansionPanel
+                defaultExpanded={true}
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+            >
+
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions1-content"
+                    id="additional-actions1-header"
+                    className={classes.panel}
+                >
+                    <span>Filter By:</span>
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        Text goes here
           </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel className={classes.panels} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <ExpansionPanelSummary
-          expandIcon={<AddIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
-        >
-          <Typography className={classes.heading}>Color</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-            diam eros in elit. Pellentesque convallis laoreet laoreet.
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel
+                defaultExpanded={true}
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}
+            >
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions2-content"
+                    id="additional-actions2-header"
+                    className={classes.panel}
+
+                >
+
+                    <span>Size</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        More Text here
           </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel className={classes.panels} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <ExpansionPanelSummary
-          expandIcon={<AddIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography className={classes.heading}>Material</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros,
-            vitae egestas augue. Duis vel est augue.
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions3-content"
+                    id="additional-actions3-header"
+                >
+                <span>Type</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
           </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel className={classes.panels} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <ExpansionPanelSummary
-          expandIcon={<AddIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
-        >
-          <Typography className={classes.heading}>Price</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas eros,
-            vitae egestas augue. Duis vel est augue.
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions4-content"
+                    id="additional-actions4-header"
+                    className={classes.panel}
+
+                >
+                    <span>Color</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
           </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-    </div>
-  );
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions5-content"
+                    id="additional-actions5-header"
+                    className={classes.panel}
+
+                >
+                    <span>Material</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions6-content"
+                    id="additional-actions6-header"
+                    className={classes.panel}
+
+                >
+                    <span>Price</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions7-content"
+                    id="additional-actions7-header"
+                    className={classes.panel}
+
+                >
+                    <span>Features</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions8-content"
+                    id="additional-actions8-header"
+                    className={classes.panel}
+
+                >
+                    <span>Thread Count</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions9-content"
+                    id="additional-actions9-header"
+                    className={classes.panel}
+                >
+                    <span>Pattern</span>
+                    
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions10-content"
+                    id="additional-actions10-header"
+                    className={classes.panel}
+
+                >
+                    <span>Feature X</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions11-content"
+                    id="additional-actions11-header"
+                    className={classes.panel}
+
+                >
+                    <span>Feature Y</span>
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+            <ExpansionPanel
+                onClick={event => event.stopPropagation()}
+                onFocus={event => event.stopPropagation()}>
+                <ExpansionPanelSummary
+                    expandIcon={<AddIcon />}
+                    aria-label="Expand"
+                    aria-controls="additional-actions12-content"
+                    id="additional-actions12-header"
+                    className={classes.panel}
+
+                >
+                    <span>Feature Z</span>
+
+
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                    <Typography color="textSecondary">
+                        more and more text
+          </Typography>
+                </ExpansionPanelDetails>
+            </ExpansionPanel>
+        </div>
+    );
 }
