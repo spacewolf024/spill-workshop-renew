@@ -3,7 +3,6 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-// import SimpleModal from '../Utils/Modal';
 import '../Styles/filters.scss';
 
 
@@ -17,7 +16,8 @@ class FilterHeader extends Component {
       filterBtnText: this.props.isMobile ? 'Sort & Filter' : 'Show Filter',
       itemCount: this.props.itemCount.filter((item, index) => (item.type === 'product')),
       twoColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'active-btn' : 'inactive-btn',
-      singleColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'inactive-btn' : 'active-btn'
+      singleColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'inactive-btn' : 'active-btn',
+      open: false
     });
 
     this.filterBtnClick = this.filterBtnClick.bind(this);
@@ -26,7 +26,6 @@ class FilterHeader extends Component {
   }
 
   handleChange = name => event => {
-    console.log(name, event)
     this.setState({ ...this.state, [name]: event.target.checked });
   }
 
@@ -53,7 +52,7 @@ class FilterHeader extends Component {
   filterBtnClick() {
     var btnText = '';
     if (this.props.isMobile) {
-
+      this.props.openModal();
     } else {
       if (!this.props.filterActive) {
 

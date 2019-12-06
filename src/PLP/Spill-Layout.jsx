@@ -1,8 +1,8 @@
 import React from "react";
 import { PureComponent } from "react";
 import SpillList from "./Spill-List";
-import Filters from "../Filters/Filter-Header";
-import SortFilter from "../Filters/Filter-Container";
+import FilterHeader from "../Filters/Filter-Header";
+import FilterContainer from "../Filters/Filter-Container";
 
 import "../Styles/spill.scss";
 
@@ -24,7 +24,7 @@ class Spill extends PureComponent {
       <main>
         <article className="spill-container">
 
-          <Filters 
+          <FilterHeader 
             filterActive={this.state.showFilter} 
             showFilter={this.filterClick} 
             hideFilter={this.filterClick}
@@ -32,13 +32,14 @@ class Spill extends PureComponent {
             isMobile={this.props.isMobile}
             itemCount={this.props.spillDTO}
             key={this.props.isMobile}
+            openModal={this.props.openModal}
+            closeModal={this.props.closeModal}
           />
 
-          <SortFilter 
+          <FilterContainer 
             showFilter={this.state.showFilter} 
             closeFilter={this.filterClick}
             isMobile={this.props.isMobile}
-
           />
 
           <SpillList

@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     },
     panel: {
         height: '66px'
+    },
+    panelTitle: {
+        fontWeight: '900'
     }
 });
 
@@ -24,22 +27,26 @@ export default function ActionsInExpansionPanelSummary() {
 
     return (
         <div className={classes.root}>
-            <div className="bops-switch-filter">
-                <FormGroup row>
-                    <FormControlLabel
-                        control={
-                            <Switch
-                                value="checkedB"
-                                color="primary"
-                            />
-                        }
-                    />
-                </FormGroup>
+            <div>
                 <span className="location-icon"><LocationOnIcon /></span>
                 <span className="pickup-store-txt">Free Pickup in Store</span>
-                <span className="store-name">Deer Park Town Center</span>
+                <div className="bops-switch-filter">
+                    <FormGroup row>
+                        <FormControlLabel
+                            control={
+                                <Switch
+                                    value="checkedB"
+                                    color="primary"
+                                />
+                            }
+                        />
+                    </FormGroup>
+                </div>
+
+                <span className="store-name">Select Store</span>
 
             </div>
+            
             <ExpansionPanel
                 defaultExpanded={true}
                 onClick={event => event.stopPropagation()}
@@ -53,13 +60,13 @@ export default function ActionsInExpansionPanelSummary() {
                     id="additional-actions1-header"
                     className={classes.panel}
                 >
-                    <span>Filter By:</span>
+                    <span className={classes.panelTitle}>Filter by:</span>
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography color="textSecondary">
                         Text goes here
-          </Typography>
+                </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
 
@@ -76,9 +83,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-
-                    <span>Size</span>
-
+                    <span className={classes.panelTitle}>Size</span>
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -96,13 +101,16 @@ export default function ActionsInExpansionPanelSummary() {
                     aria-controls="additional-actions3-content"
                     id="additional-actions3-header"
                 >
-                <span>Type</span>
+                <span className={classes.panelTitle}>Type</span>
 
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography color="textSecondary">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
           </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
@@ -116,14 +124,17 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Color</span>
+                    <span className={classes.panelTitle}>Color</span>
 
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography color="textSecondary">
-                        more and more text
-          </Typography>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel
@@ -137,7 +148,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Material</span>
+                    <span className={classes.panelTitle}>Material</span>
 
 
                 </ExpansionPanelSummary>
@@ -159,7 +170,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Price</span>
+                    <span className={classes.panelTitle}>Price</span>
 
 
                 </ExpansionPanelSummary>
@@ -181,7 +192,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Features</span>
+                    <span className={classes.panelTitle}>Features</span>
 
 
                 </ExpansionPanelSummary>
@@ -202,7 +213,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Thread Count</span>
+                    <span className={classes.panelTitle}>Thread Count</span>
 
 
                 </ExpansionPanelSummary>
@@ -222,7 +233,7 @@ export default function ActionsInExpansionPanelSummary() {
                     id="additional-actions9-header"
                     className={classes.panel}
                 >
-                    <span>Pattern</span>
+                    <span className={classes.panelTitle}>Pattern</span>
                     
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -242,7 +253,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Feature X</span>
+                    <span className={classes.panelTitle}>Feature X</span>
 
 
                 </ExpansionPanelSummary>
@@ -261,7 +272,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Feature Y</span>
+                    <span className={classes.panelTitle}>Feature Y</span>
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
@@ -281,7 +292,7 @@ export default function ActionsInExpansionPanelSummary() {
                     className={classes.panel}
 
                 >
-                    <span>Feature Z</span>
+                    <span className={classes.panelTitle}>Feature Z</span>
 
 
                 </ExpansionPanelSummary>

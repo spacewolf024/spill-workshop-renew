@@ -14,6 +14,7 @@ class FilterContainer extends Component {
 
   render() {
     var showHideClass = this.props.showFilter ? 'show-filter' : 'hide-filter';
+    
     return (
       <section className={showHideClass}>
         <Filters />
