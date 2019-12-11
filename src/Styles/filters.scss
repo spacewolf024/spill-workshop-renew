@@ -9,10 +9,9 @@
   margin-left:-296px;
   transform:translateX(0);
   animation-name: filter-slide-in;
-  animation-duration: 300ms;
+  animation-duration: 400ms;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
-  
 }
 
 .hide-filter {
@@ -25,7 +24,7 @@
   margin-left:-296px;
   transform:translateX(0);
   animation-name: filter-slide-out;
-  animation-duration: 300ms;
+  animation-duration: 400ms;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
@@ -287,6 +286,9 @@
     transform:translateX(0);
     visibility:visible;
   }
+  40% {
+    transform:translateX(0);
+  }
   100% {
     transform:translateX(100%);
     visibility:visible;
@@ -299,6 +301,9 @@
     transform:translateX(100%);
     visibility:visible;
     opacity:1;
+  }
+  40% {
+    transform:translateX(100%);
   }
   99% {
     transform:translateX(0);
