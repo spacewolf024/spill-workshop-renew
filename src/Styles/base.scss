@@ -1,5 +1,4 @@
 body {
-  padding-bottom: 175px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -48,6 +47,12 @@ ul, ol {
   width: 85%;
 }
 
+.footer-img{
+  display:inline-block;
+  width:100%;
+  overflow:hidden;
+}
+
 @media only screen and (max-width: 600px) {
 
 }
@@ -78,7 +83,7 @@ ul, ol {
 }
 
 @media only screen and (min-width: 1680px) {
-  body {
+  .main {
     margin: 0 auto;
     width: 1680px;
   }

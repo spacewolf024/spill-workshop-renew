@@ -7,6 +7,8 @@ import Breadcrumbs from "./Breadcrumbs/Breadcrumbs";
 import "./Styles/base.scss";
 import dsktp_header from "./Styles/Images/header-dsktp.png"
 import mobile_header from "./Styles/Images/header-mobile.png"
+import dsktp_footer from "./Styles/Images/footer-dsktp.png"
+import mobile_footer from "./Styles/Images/footer-mobile.png"
 import Modal from '@material-ui/core/Modal';
 import Filters from "./Filters/Filters";
 
@@ -84,6 +86,7 @@ class App extends Component {
 
   render() {
     return (
+      <span>
       <div className="main">
         <img className={"header-img " + this.state.headerClass} src={this.state.header} alt="header" />
 
@@ -121,6 +124,9 @@ class App extends Component {
         </Modal>
 
       </div>
+      
+      <img className={"footer-img"} src={this.state.isMobile ? mobile_footer : dsktp_footer} alt="footer" />
+      </span>
     );
   }
 }
