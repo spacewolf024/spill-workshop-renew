@@ -92,9 +92,8 @@ class App extends Component {
           <Breadcrumbs
             isMobile={this.state.isMobile}
           />
-          
           <h1>Kitchen Tools and Accessories</h1>
-
+          
         </div>
 
         <SpillLayout
@@ -111,9 +110,12 @@ class App extends Component {
           aria-describedby="simple-modal-description"
           open={this.state.modalOpenBool}
           onClose={this.handleClose}
+          onClick={this.handleClose}
         >
           <div className="modal-body">
-            <button className="modal-close-btn" onClick={this.closeModal}>&times;</button>
+            <div className="close-modal-btn-container">
+              <button className="modal-close-btn" onClick={this.closeModal}>&times;</button>
+            </div>
             <Filters />
           </div>
         </Modal>
