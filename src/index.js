@@ -21,7 +21,8 @@ class App extends Component {
       spillData: this.injectThemes(),
       header: this.isMobile ? mobile_header : dsktp_header,
       headerClass: this.isMobile ? "mobile-header" : "desktop-header",
-      modalOpenBool: false
+      modalOpenBool: false,
+      filterFlip: false
     };
 
     this.injectThemes = this.injectThemes.bind(this);
@@ -29,6 +30,7 @@ class App extends Component {
     this.windowWatcher = this.windowWatcher.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.applyFilter = this.applyFilter.bind(this);
   }
 
   componentDidMount() {
@@ -84,48 +86,59 @@ class App extends Component {
     return cards;
   }
 
+  applyFilter() {
+    var flipCheck = this.state.filterFlip;
+    this.setState({
+      spillData: !flipCheck ?  Data.GetProducts() : this.injectThemes(),
+      filterFlip: !this.state.filterFlip
+    });
+    
+    window.scrollTo(0 , 0);
+  }
+
   render() {
+
     return (
       <span>
-      <div className="main">
-        <img className={"header-img " + this.state.headerClass} src={this.state.header} alt="header" />
+        <div className="main">
+          <img className={"header-img " + this.state.headerClass} src={this.state.header} alt="header" />
 
-        <div className="page-header">
+          <div className="page-header">
 
-          <Breadcrumbs
-            isMobile={this.state.isMobile}
-          />
-          <h1>Kitchen Tools and Accessories</h1>
-          
-        </div>
-
-        <SpillLayout
-          cols={this.state.altCol}
-          spillDTO={this.state.spillData}
-          onGridClick={this.gridHandler}
-          isMobile={this.state.isMobile}
-          openModal={this.openModal}
-          closeModal={this.closeModal}
-        />
-
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={this.state.modalOpenBool}
-          onClose={this.handleClose}
-          onClick={this.handleClose}
-        >
-          <div className="modal-body">
-            <div className="close-modal-btn-container">
-              <button className="modal-close-btn" onClick={this.closeModal}>&times;</button>
-            </div>
-            <Filters />
+            <Breadcrumbs
+              isMobile={this.state.isMobile}
+            />
+            <h1 className="page-title">Kitchen Tools and Accessories</h1>
+            
           </div>
-        </Modal>
 
-      </div>
-      
-      <img className={"footer-img"} src={this.state.isMobile ? mobile_footer : dsktp_footer} alt="footer" />
+          <SpillLayout
+            cols={this.state.altCol}
+            spillDTO={this.state.spillData}
+            onGridClick={this.gridHandler}
+            isMobile={this.state.isMobile}
+            openModal={this.openModal}
+            closeModal={this.closeModal}
+            applyFilter={this.applyFilter}
+          />
+
+          <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.state.modalOpenBool}
+            onClose={this.handleClose}
+            onClick={this.handleClose}
+          >
+            <div className="modal-body">
+              <div className="close-modal-btn-container">
+                <button className="modal-close-btn" onClick={this.closeModal}>&times;</button>
+              </div>
+              <Filters />
+            </div>
+          </Modal>
+
+        </div>
+        <img className={"footer-img"} src={this.state.isMobile ? mobile_footer : dsktp_footer} alt="footer" />
       </span>
     );
   }

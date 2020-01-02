@@ -24,6 +24,10 @@ ul {
   width: 100%;
 }
 
+.page-title {
+  margin: 25px 0 0 0;
+}
+
 .active-filters {
   transform:translateX(0);
   animation-name: content-slide-in;

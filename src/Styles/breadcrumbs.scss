@@ -11,7 +11,7 @@
  }
  
  .items {
-  padding-right: 5px;
+  padding-right: 10px;
   display: inline-block;
   text-transform: capitalize;
  }
@@ -23,7 +23,13 @@
  }
  
  .items-anime:after {
-   content: " >";
+   content: " ";
+   border: solid #666;
+   border-width: 0 1px 1px 0;
+   display: inline-block;
+   padding: 5px;
+   transform: rotate(330deg);
+   -webkit-transform: rotate(330deg);
  }
  
  a {
@@ -35,20 +41,28 @@
  }
  
  a:visited {
-   color: black;
+   color: #666666;
  }
  
  .items-anime:last-child:after {
    content: '';
  }
- 
+
  .items:after {
-   content: " >";
- } 
- 
- .items:last-child:after {
-   content: '';
+  content: "";
+  border: solid #666;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+  margin-left: 5px;
  }
+
+ .items:last-child:after {
+  content: '';
+  border: none;
+}
  
  h2 {
   text-align: center;
@@ -101,7 +115,7 @@
  }
  
  .meatballs {
-     color: #616161;
+     color: #666666;
      width: 24px;
      cursor: pointer;
      height: 16px;
@@ -120,12 +134,18 @@
     text-align: right;
     flex-wrap: nowrap;
     flex-direction: row;
-    margin: 0;
+    margin: 15px 0 0 0;
     flex-grow: 1;
     padding: 0;
     align-items: baseline;
     -webkit-overflow-scrolling: touch;
     transition: 1s;
+    color: #666666;
+
+    a {
+      color: #666;
+      text-decoration: underline;
+    }
   }
  
   .meatball-list::-webkit-scrollbar {
@@ -149,7 +169,7 @@
    flex-direction: row !important;
  }
  
- @media screen and (min-width: 599px){
+ @media screen and (min-width: 599px) {
    
   .breadcrumb-container {
     float: left;
@@ -166,7 +186,6 @@
      padding-top: 8px;
    }
  }
-
 
  .ani-items {
   max-width: 0;

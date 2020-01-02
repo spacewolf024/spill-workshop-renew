@@ -3,8 +3,8 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import TuneIcon from '@material-ui/icons/Tune';
 import '../Styles/filters.scss';
-
 
 class FilterHeader extends Component {
 
@@ -13,7 +13,7 @@ class FilterHeader extends Component {
 
     this.state = ({
       filterActiveClass: this.props.filterActive ? 'filter-shown' : 'filter-hidden',
-      filterBtnText: this.props.isMobile ? 'Sort & Filter' : 'Show Filter',
+      filterBtnText: this.props.isMobile ? 'Sort & Filter' : 'Filter',
       itemCount: this.props.itemCount.filter((item, index) => (item.type === 'product')),
       twoColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'active-btn' : 'inactive-btn',
       singleColBtnClass: document.getElementsByClassName('alt-columns').length === 0 ? 'inactive-btn' : 'active-btn',
@@ -66,7 +66,7 @@ class FilterHeader extends Component {
       } else if (this.props.filterActive) {
   
         this.props.showFilter(!this.props.filterActive);
-        btnText = this.props.isMobile ? 'Sort & Filter' : 'Show Filter'
+        btnText = this.props.isMobile ? 'Sort & Filter' : 'Filter'
         this.setState({
           filterActiveClass: 'filter-hidden',
           filterBtnText: btnText
@@ -90,17 +90,17 @@ class FilterHeader extends Component {
                 }
               />
             </FormGroup>
-            <span className="location-icon"><LocationOnIcon /></span>
+            <span className="location-icon"><LocationOnIcon  /></span>
             <span className="pickup-store-txt">Free Pickup in Store</span>
             <span className="store-name">Deer Park Town Center</span>
             
           </div>
         <ul className='filter-container'>
           <li className={'sort-filter ' + this.state.filterActiveClass}>
-            <button onClick={this.filterBtnClick}>{this.state.filterBtnText}</button>
+            <button onClick={this.filterBtnClick}>{this.state.filterBtnText}<TuneIcon style={{fontSize: 15, paddingLeft: 7}}/></button>
           </li>
           <li className='bops-filter'>
-            <button>Sort by<i></i></button>
+            <button>Most Relevant<i></i></button>
           </li>
           <li className='col-switch'>
             <button className={'two-col ' + this.state.twoColBtnClass } onClick={this.onGridClick}></button>

@@ -1,16 +1,14 @@
 import React from 'react';
 import AddIcon from '@material-ui/icons/Add';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import PropTypes from 'prop-types';
 
-const useStyles = makeStyles({
+
+const styles = theme =>({
     root: {
         width: '100%',
     },
@@ -22,31 +20,13 @@ const useStyles = makeStyles({
     }
 });
 
-export default function ActionsInExpansionPanelSummary() {
-    const classes = useStyles();
+export class Filters extends React.Component {
 
-    return (
-        <div className={classes.root}>
+    render() {
+        const { classes } = this.props;
+
+        return (
             <div>
-                <span className="location-icon"><LocationOnIcon /></span>
-                <span className="pickup-store-txt">Free Pickup in Store</span>
-                <div className="bops-switch-filter">
-                    <FormGroup row>
-                        <FormControlLabel
-                            control={
-                                <Switch
-                                    value="checkedB"
-                                    color="primary"
-                                />
-                            }
-                        />
-                    </FormGroup>
-                </div>
-
-                <span className="store-name">Select Store</span>
-
-            </div>
-            
             <ExpansionPanel
                 defaultExpanded={true}
                 onClick={event => event.stopPropagation()}
@@ -122,7 +102,6 @@ export default function ActionsInExpansionPanelSummary() {
                     aria-controls="additional-actions4-content"
                     id="additional-actions4-header"
                     className={classes.panel}
-
                 >
                     <span className={classes.panelTitle}>Color</span>
 
@@ -218,9 +197,14 @@ export default function ActionsInExpansionPanelSummary() {
 
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
+
                     <Typography color="textSecondary">
-                        more and more text
-          </Typography>
+
+
+                        <button onClick={this.props.passer}>Test Me</button>
+
+
+                    </Typography>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
             <ExpansionPanel
@@ -303,5 +287,12 @@ export default function ActionsInExpansionPanelSummary() {
                 </ExpansionPanelDetails>
             </ExpansionPanel>
         </div>
-    );
+        )
+    }
 }
+
+Filters.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+export default withStyles(styles)(Filters);
