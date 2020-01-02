@@ -87,13 +87,23 @@ class App extends Component {
   }
 
   applyFilter() {
-    var flipCheck = this.state.filterFlip;
-    this.setState({
-      spillData: !flipCheck ?  Data.GetProducts() : this.injectThemes(),
-      filterFlip: !this.state.filterFlip
+    window.scrollTo({
+      top: 180, 
+      left: 0, 
+      behavior: 'smooth'
     });
-    
-    window.scrollTo(0 , 0);
+
+    this.setState({
+      spillData: ''
+    });
+
+    setTimeout(() => {
+      var flipCheck = this.state.filterFlip;
+      this.setState({
+        spillData: !flipCheck ?  Data.GetProducts() : this.injectThemes(),
+        filterFlip: !this.state.filterFlip
+      })
+    }, 1500);
   }
 
   render() {
