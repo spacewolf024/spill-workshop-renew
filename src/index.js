@@ -21,7 +21,8 @@ class App extends Component {
       spillData: this.injectThemes(),
       header: this.isMobile ? mobile_header : dsktp_header,
       headerClass: this.isMobile ? "mobile-header" : "desktop-header",
-      modalOpenBool: false
+      modalOpenBool: false,
+      isMobile: false
     };
 
     this.injectThemes = this.injectThemes.bind(this);

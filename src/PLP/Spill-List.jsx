@@ -10,7 +10,7 @@ class SpillList extends Component {
       if (item.type === "theme") {
         return <ThemeCard key={index} item={item} index={index} />;
       } else {
-        return <ProductCard key={index} item={item} index={index} />;
+        return <ProductCard key={index} item={item} index={index} isMobile={this.props.isMobile} />;
       }
     });
 

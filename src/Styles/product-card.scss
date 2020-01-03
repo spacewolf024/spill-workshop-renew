@@ -81,6 +81,11 @@
   .product-info {
     padding-bottom: 30px;
   }
+
+  .product-colorbar-button:nth-child(n+3) {
+    display: none;
+  }
+  
   .miniset-list {
     li:nth-of-type(odd) {
       .product-info {
