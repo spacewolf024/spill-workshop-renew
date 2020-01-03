@@ -14,6 +14,8 @@ class SpillList extends Component {
     var filtersActive = this.props.showFilter ? "active-filters" : 'deactivate-filters';
     var loading = '';
 
+    const loader = <div className="lds-default"> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div></div>;
+
     if (this.props.spillDTO !== '') {
       var cards = this.props.spillDTO.map((item, index) => {
         if (item.type === "theme") {
@@ -26,7 +28,13 @@ class SpillList extends Component {
       loading = " loading";
     }
 
-    const loader = <div className="lds-default"> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div></div>;
+    var cards = this.props.spillDTO.map((item, index) => {
+      if (item.type === "theme") {
+        return <ThemeCard key={index} item={item} index={index} />;
+      } else {
+        return <ProductCard key={index} item={item} index={index} isMobile={this.props.isMobile} />;
+      }
+    });
 
     return (
       <section className={filtersActive + ' product-card-container'}>
