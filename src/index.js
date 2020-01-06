@@ -11,6 +11,8 @@ import dsktp_footer from "./Styles/Images/footer-dsktp.png"
 import mobile_footer from "./Styles/Images/footer-mobile.png"
 import Modal from '@material-ui/core/Modal';
 import Filters from "./Filters/Filters";
+import store from "./Redux/Filters";
+import { Provider } from 'react-redux';
 
 class App extends Component {
   constructor() {
@@ -58,7 +60,6 @@ class App extends Component {
 
   closeModal() {
     this.setState({modalOpenBool: !this.state.modalOpenBool});
-
   }
 
   openModal() {
@@ -103,7 +104,7 @@ class App extends Component {
         spillData: !flipCheck ?  Data.GetProducts() : this.injectThemes(),
         filterFlip: !this.state.filterFlip
       })
-    }, 1500);
+    }, 2900);
   }
 
   render() {
@@ -118,7 +119,7 @@ class App extends Component {
             <Breadcrumbs
               isMobile={this.state.isMobile}
             />
-            <h1 className="page-title">Kitchen Tools and Accessories</h1>
+            <h1 className="page-title">Sheets, Pillow Cases &amp; Sheet Sets</h1>
             
           </div>
 
@@ -154,4 +155,9 @@ class App extends Component {
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);

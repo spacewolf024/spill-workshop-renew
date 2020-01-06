@@ -137,7 +137,6 @@ ul {
   margin: 20% 50%;
 }
 
-
 .lds-default {
   display: inline-block;
   position: relative;
@@ -149,8 +148,9 @@ ul {
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #CCC;
+  background: #666;
   border-radius: 50%;
+  border: solid 1px #CCC;
   animation: lds-default 1.2s linear infinite;
 }
 

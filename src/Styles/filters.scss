@@ -31,14 +31,6 @@
   animation-timing-function: ease-out;
 }
 
-// #FilterContainer {
-//   overflow: hidden;
-//   position: relative;
-//   width: 294px;
-//   min-height: 900px;
-//   height: 800px;
-// }
-
 .sticky-filter-container {
   position: sticky;
   top: 0;
@@ -169,6 +161,12 @@
     }
   }
 
+  .test-button {
+    &:focus {
+      outline: dotted 1px black;
+    }
+  }
+
   .single-col {
     background-image: url('./Images/single-col.PNG');
     background-repeat: no-repeat;
@@ -205,6 +203,19 @@
     transform: rotate(45deg);
     color: #FFF;
   }
+}
+
+.facet-text {
+  
+}
+
+.show-facet {
+
+}
+
+.hide-facet {
+  visibility: hidden;
+  height: 0;
 }
 
 

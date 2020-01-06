@@ -2,8 +2,8 @@ export default class Data {
   static GetProducts() {
     return [
       {
-        name: "Some awesome name",
-        price: "$99.99",
+        name: "Washed Organic Cotton Sheet Sets",
+        price: "$39.95 - $169.95",
         type: "product",
         lineLevelMessage: {
           primary: "Cyber Week Sale",
@@ -16,8 +16,8 @@ export default class Data {
         }
       },
       {
-        name: "Super cool name",
-        price: "$149.99",
+        name: "Linen Sheet Sets",
+        price: "$49.95 - $279.95",
         type: "product",
         lineLevelMessage: {
           primary: "Cyber Week Sale",
@@ -30,8 +30,8 @@ export default class Data {
         }
       },
       {
-        name: "Groovy Product",
-        price: "$149.99 - $299",
+        name: "Sateen 600 Thread Count Sheet Sets",
+        price: "$34.95 - $189.95",
         type: "product",
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
         images: {
@@ -41,8 +41,8 @@ export default class Data {
         }
       },
       {
-        name: Data.randomNameGenerator() + "favorite Product",
-        price: "$1.99",
+        name: "Flannel Sheet Sets",
+        price: "$29.95 - $159.95",
         type: "product",
         images: {
           base: Data.imageArr[3],
@@ -51,8 +51,8 @@ export default class Data {
         }
       },
       {
-        name: "This product has a really long name",
-        price: "$1.99 - $2.99",
+        name: "Haven Percale Sheet Sets",
+        price: "$24.95 - $129.95",
         type: "product",
         images: {
           base: Data.imageArr[4],
@@ -61,8 +61,8 @@ export default class Data {
         }
       },
       {
-        name: Data.randomNameGenerator() + "Favorite Product",
-        price: "$1.99",
+        name: '400 Thread Count Sateen Sheet Sets',
+        price: "$24.95 - $159.95",
         type: "product",
         images: {
           base: Data.imageArr[5],
@@ -71,8 +71,8 @@ export default class Data {
         }
       },
       {
-        name: "CB2's FAVORITE PRODUCT",
-        price: "$99999.99",
+        name: "Valeta Organic Sheet Sets",
+        price: "$24.95 - $139.95",
         type: "product",
         images: {
           base: Data.imageArr[6],
@@ -81,8 +81,8 @@ export default class Data {
         }
       },
       {
-        name: "Product name goes here",
-        price: "$300 - $500",
+        name: "Neville Organic Patterned Sheet Sets",
+        price: "$24.95 - $139.95",
         type: "product",
         images: {
           base: Data.imageArr[7],
@@ -91,8 +91,8 @@ export default class Data {
         }
       },
       {
-        name: "Lorem ipsum productsum",
-        price: "$1000.00",
+        name: "Lior Organic Embroidered Sheet Sets",
+        price: "$29.95 - $139.95",
         type: "product",
         images: {
           base: Data.imageArr[8],
@@ -101,8 +101,8 @@ export default class Data {
         }
       },
       {
-        name: "Extra product, read all about it",
-        price: "$300 - $500",
+        name: "400 Thread Count Percale Sheet Sets",
+        price: "$24.95 - $159.95",
         type: "product",
         images: {
           base: Data.imageArr[9],
@@ -111,12 +111,23 @@ export default class Data {
         }
       },
       {
-        name: "Soo many products",
-        price: "$1000.00",
+        name: "Ellio Organic Sheet Sets",
+        price: "$24.95 - $129.95",
         type: "product",
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
         images: {
           base: Data.imageArr[10],
+          hover: "",
+          isHoverable: ""
+        }
+      },
+      {
+        name: "Willow Sheet Sets",
+        price: "$45.00 - $170.00",
+        type: "product",
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        images: {
+          base: Data.imageArr[11],
           hover: "",
           isHoverable: ""
         }
@@ -133,7 +144,7 @@ export default class Data {
   }
 
   static GetBreadcrumbs() {
-    return ["Home", this.randomSuperCategoryGenerator(), this.randomCategoryGenerator(), this.randomSpillGenerator()];
+    return ["Home", "Bed & Bath", "Bedding",  "Sheets"];
   }
 
   static dataObj() {
@@ -229,18 +240,19 @@ export default class Data {
   }
 
   static imageArr = [
-    "https://images.crateandbarrel.com/is/image/Crate/RedRimBuffetPlateSHF16/$web_spill_item$/190411135354/red-rim-buffet-plate.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/AminaDinnerPlateSHS20/$web_spill_item$/190926135355/amina-dinner-plate.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/WrenGreyDinnerPlateSHS20/$web_spill_item$/190927162448/wren-grey-dinner-plate.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/$web_spill_item$/191105171253/all-clad-d3-curated-4-qt-sautese.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/$web_spill_item$/191105171307/all-clad-d3-curated-2.5-saucier.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/LodgeCastIronTrnglMiniSrvrSHF19/$web_spill_item$/190531160648/lodge-cast-iron-triangle-mini-server.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/AllCladHA1HrdAndzNS8qStkptSHS19/$web_spill_item$/190411134736/all-clad-ha1-hard-anodized-nonstick-8-qt.-stockpot.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/WolfGrmt2SlcTstrRedKnobsSHS20/$web_spill_item$/191023114340/ea-wolf-gourmet-2-slice-toaster-red-knobs.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/NylonSSCookieSpatulasS3SHS17/$web_spill_item$/190411135306/nylon-and-stainless-steel-cookie-spatulas-set-of-three.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/GoldAcaciaMeasuringSpoonsSHF18/$web_spill_item$/190411135059/acacia-wood-and-gold-measuring-spoons-set-of-4.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/EpicureanBgBlkSltRctCutBrdSHS19/$web_spill_item$/190411135028/epicurean-big-block-rectangular-slate-cutting-board.jpg?wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/BerryBoxColander5p25inWhtSHF19/$web_spill_item$/190411134830/berry-box-white-colander.jpg?wid=625&hei=625"
+    "https://images.crateandbarrel.com/is/image/Crate/WashedOrganicSheetGroupFHS20/?$web_product_hero$&191126112234&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LinenSheetStackFHS19/?$web_product_hero$&190411135201&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/Sateen600TCStackFHS19/?$web_product_hero$&190411135418&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/FlannelSheetGroupFHF18/?$web_product_hero$&190411135039&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/HavenSheetGroupFHF18/?$web_product_hero$&190411135114&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/Sateen400TCSheetStackFHF19/?$web_product_hero$&190624145254&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/ValetaSheetStackFHF19/?$web_product_hero$&190624151337&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/NevilleSheetStackFHF19/?$web_product_hero$&190508142407&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LiorSheetStackFHF19/?$web_product_hero$&190513124341&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/Percale400TCStackFHS19/?$web_product_hero$&190411135331&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/EllioSheetStackFHS19/?$web_product_hero$&190411135024&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/WillowQueenSheetSetSHS19/?$web_product_hero$&190411135553&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/WillowQueenSheetSetSHS19/?$web_product_hero$&190411135553&wid=625&hei=625"
   ];
 
   static getImageUrl() {
