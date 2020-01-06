@@ -69,7 +69,7 @@ class App extends Component {
 
   injectThemes() {
     let products = Data.GetProducts();
-    let themes = Data.GetThemes();
+    // let themes = Data.GetThemes();
 
     for (var i = 0; i < products.length; i++) {
       var obj = { ...Data.dataObj(), ...products[i] };
@@ -78,12 +78,12 @@ class App extends Component {
 
     //loop through themes and insert theme into the proper position with the products array
     let cards = [...products]; //clone array
-    themes.forEach(theme => {
-      let position = theme.position - 1; //account for 0th item
-      if (products.length > position) {
-        cards.splice(position, 0, theme);
-      }
-    });
+    // themes.forEach(theme => {
+    //   let position = theme.position - 1; //account for 0th item
+    //   if (products.length > position) {
+    //     cards.splice(position, 0, theme);
+    //   }
+    // });
     return cards;
   }
 
@@ -119,7 +119,7 @@ class App extends Component {
             <Breadcrumbs
               isMobile={this.state.isMobile}
             />
-            <h1 className="page-title">Sheets, Pillow Cases &amp; Sheet Sets</h1>
+            <h1 className="page-title">Individual Cookware</h1>
             
           </div>
 

@@ -2,13 +2,23 @@ export default class Data {
   static GetProducts() {
     return [
       {
-        name: "Washed Organic Cotton Sheet Sets",
-        price: "$39.95 - $169.95",
+        name: "Le Creuset ® 2.25-Quart Cerise Everyday Pan with Lid",
+        price: "$250.00",
         type: "product",
         lineLevelMessage: {
           primary: "Cyber Week Sale",
           marketing: "New Arrival"
         },
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[0],
           hover: "",
@@ -16,13 +26,23 @@ export default class Data {
         }
       },
       {
-        name: "Linen Sheet Sets",
-        price: "$49.95 - $279.95",
+        name: "Le Creuset ® 2.25-Quart Marine Everyday Pan with Lid",
+        price: "$250.00",
         type: "product",
         lineLevelMessage: {
           primary: "Cyber Week Sale",
           marketing: "New Arrival"
         },
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[1],
           hover: "",
@@ -30,10 +50,20 @@ export default class Data {
         }
       },
       {
-        name: "Sateen 600 Thread Count Sheet Sets",
-        price: "$34.95 - $189.95",
+        name: "Le Creuset ® Heritage Covered Rectangular Fig Baking Dish",
+        price: "$110.00",
         type: "product",
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[2],
           hover: "",
@@ -41,8 +71,8 @@ export default class Data {
         }
       },
       {
-        name: "Flannel Sheet Sets",
-        price: "$29.95 - $159.95",
+        name: "All-Clad ® d3 Curated 4-Quart Sauteuse Pan",
+        price: "$279.95",
         type: "product",
         images: {
           base: Data.imageArr[3],
@@ -51,8 +81,8 @@ export default class Data {
         }
       },
       {
-        name: "Haven Percale Sheet Sets",
-        price: "$24.95 - $129.95",
+        name: "All-Clad ® d3 Curated 8.5\" Skillet",
+        price: "$119.95",
         type: "product",
         images: {
           base: Data.imageArr[4],
@@ -61,8 +91,8 @@ export default class Data {
         }
       },
       {
-        name: '400 Thread Count Sateen Sheet Sets',
-        price: "$24.95 - $159.95",
+        name: 'All-Clad ® d3 Curated 5-Quart Stockpot',
+        price: "$294.95",
         type: "product",
         images: {
           base: Data.imageArr[5],
@@ -71,9 +101,19 @@ export default class Data {
         }
       },
       {
-        name: "Valeta Organic Sheet Sets",
-        price: "$24.95 - $139.95",
+        name: "Le Creuset ® 2.25-Quart Oyster Everyday Pan with Lid",
+        price: "$250.00",
         type: "product",
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[6],
           hover: "",
@@ -81,8 +121,8 @@ export default class Data {
         }
       },
       {
-        name: "Neville Organic Patterned Sheet Sets",
-        price: "$24.95 - $139.95",
+        name: "All-Clad ® d3 Curated 5-Quart Stockpot",
+        price: "$294.95",
         type: "product",
         images: {
           base: Data.imageArr[7],
@@ -91,9 +131,19 @@ export default class Data {
         }
       },
       {
-        name: "Lior Organic Embroidered Sheet Sets",
-        price: "$29.95 - $139.95",
+        name: "Le Creuset ® 2.25-Quart Oyster Everyday Pan with Lid",
+        price: "$250.00",
         type: "product",
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[8],
           hover: "",
@@ -101,9 +151,19 @@ export default class Data {
         }
       },
       {
-        name: "400 Thread Count Percale Sheet Sets",
-        price: "$24.95 - $159.95",
+        name: "Le Creuset ® 2.25-Quart Caribbean Everyday Pan with Lid",
+        price: "$250.00",
         type: "product",
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
         images: {
           base: Data.imageArr[9],
           hover: "",
@@ -111,8 +171,8 @@ export default class Data {
         }
       },
       {
-        name: "Ellio Organic Sheet Sets",
-        price: "$24.95 - $129.95",
+        name: "All-Clad ® d3 Curated 2.5-Quart Saucier",
+        price: "$129.95",
         type: "product",
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
         images: {
@@ -122,12 +182,75 @@ export default class Data {
         }
       },
       {
-        name: "Willow Sheet Sets",
-        price: "$45.00 - $170.00",
+        name: "All-Clad ® d3 Curated 10.5? Fry Pan",
+        price: "$99.95",
         type: "product",
         lineLevelMessage: Data.getLineLevelMsgGenerator(),
         images: {
           base: Data.imageArr[11],
+          hover: "",
+          isHoverable: ""
+        }
+      },
+      {
+        name: "Le Creuset ® Signature Graphite 2.75-Qt. Round Dutch Oven",
+        price: "$250.00",
+        type: "product",
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
+        images: {
+          base: Data.imageArr[12],
+          hover: "",
+          isHoverable: ""
+        }
+      },
+      {
+        name: "Le Creuset ® 2.25-Quart White Everyday Pan with Lid",
+        price: "$250.00",
+        type: "product",
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
+        images: {
+          base: Data.imageArr[13],
+          hover: "",
+          isHoverable: ""
+        }
+      },
+      {
+        name: "Le Creuset ® Signature Cream 2.75-Qt. Round Dutch Oven",
+        price: "$250.00",
+        type: "product",
+        lineLevelMessage: Data.getLineLevelMsgGenerator(),
+        showColorbar: true,
+        colorBar: 
+          {
+            imagepath: Data.randomColorBarCreator(),
+            altText: '',
+            showPlus: '',
+            sku: '',
+            grouper: '',
+            sor: ''
+          },
+        images: {
+          base: Data.imageArr[14],
           hover: "",
           isHoverable: ""
         }
@@ -144,7 +267,7 @@ export default class Data {
   }
 
   static GetBreadcrumbs() {
-    return ["Home", "Bed & Bath", "Bedding",  "Sheets"];
+    return ["Home",  "Kitchen",  "Cookware & Bakeware",  "Individual Cookware"];
   }
 
   static dataObj() {
@@ -159,10 +282,10 @@ export default class Data {
       formattedPrice: "",
       shippingMsg: Data.randomShippingMsgGenerator(),
       lineLevelMessage: Data.getLineLevelMsgGenerator(),
-      showColorbar: Data.randomBoolGenerator(),
+      showColorbar: false,
       colorBar: 
         {
-          imagepath: Data.randomColorBarCreator(),
+          imagepath: '',
           altText: '',
           showPlus: '',
           sku: '',
@@ -239,19 +362,21 @@ export default class Data {
   }
 
   static imageArr = [
-    "https://images.crateandbarrel.com/is/image/Crate/WashedOrganicSheetGroupFHS20/?$web_product_hero$&191126112234&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/LinenSheetStackFHS19/?$web_product_hero$&190411135201&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/Sateen600TCStackFHS19/?$web_product_hero$&190411135418&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/FlannelSheetGroupFHF18/?$web_product_hero$&190411135039&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/HavenSheetGroupFHF18/?$web_product_hero$&190411135114&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/Sateen400TCSheetStackFHF19/?$web_product_hero$&190624145254&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/ValetaSheetStackFHF19/?$web_product_hero$&190624151337&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/NevilleSheetStackFHF19/?$web_product_hero$&190508142407&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/LiorSheetStackFHF19/?$web_product_hero$&190513124341&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/Percale400TCStackFHS19/?$web_product_hero$&190411135331&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/EllioSheetStackFHS19/?$web_product_hero$&190411135024&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/WillowQueenSheetSetSHS19/?$web_product_hero$&190411135553&wid=625&hei=625",
-    "https://images.crateandbarrel.com/is/image/Crate/WillowQueenSheetSetSHS19/?$web_product_hero$&190411135553&wid=625&hei=625"
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuset2p25BraiserCeriseSHS20/?$web_product_hero$&191202173358&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuset2p25BraiserMarineSHS20/?$web_product_hero$&191202173358&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuHrtgCvdRctBkngDshFigSHS20/?$web_product_hero$&191106121336&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated4qtSauteseSHS20/?$web_product_hero$&191105171253&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated8p5inSklltSHS20/?$web_product_hero$&191105171307&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated5qtStockptSHS20/?$web_product_hero$&191105171307&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuset2p25BraiserOysterSHS20/?$web_product_hero$&191202173357&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated5qtStockptSHS20/?$web_product_hero$&191105171307&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuset2p25BraiserOysterSHS20/?$web_product_hero$&191202173357&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuset2p25BraiserCaribSHS20/?$web_product_hero$&191202173358&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated2p5SaucierSHS20/?$web_product_hero$&191105171307&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/AllCladD3Curated10p5FryPanSHS20/?$web_product_hero$&191105171307&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuSg2p75qtRdDchOvnGphSHF18/?$web_product_hero$&190411135153&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreu2p25qtBraiserWhtSHS20/?$web_product_hero$&191025113356&wid=625&hei=625",
+    "https://images.crateandbarrel.com/is/image/Crate/LeCreuSg2p75qtRdDchOvnCrmSHF18/?$web_product_hero$&190411135153&wid=625&hei=625"
   ];
 
   static getImageUrl() {
